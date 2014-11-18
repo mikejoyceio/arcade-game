@@ -2,4 +2,10 @@
 
 http://retrofrogger.com
 
-##Resources
+###Resources
+
+**JavaScript**
+
+http://eloquentjavascript.net/
+
+
