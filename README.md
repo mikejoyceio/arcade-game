@@ -8,6 +8,8 @@ http://retrofrogger.com
 
 https://www.udacity.com/course/progress#!/c-ud015-nd
 
+https://github.com/batmanimal/object-oriented-js
+
 http://eloquentjavascript.net/
 
 
