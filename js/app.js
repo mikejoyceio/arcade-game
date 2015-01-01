@@ -1,3 +1,8 @@
+// Console Log Helper Function
+function log(log) {
+ return console.log(log);
+}
+
 // Enemies our player must avoid
 var Enemy = function() {
     // Variables applied to each of our instances go here,
