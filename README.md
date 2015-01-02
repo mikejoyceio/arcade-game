@@ -17,3 +17,7 @@ http://eloquentjavascript.net/
 **Generate Random Numbers**
 
 https://gist.github.com/kerimdzhanov/7529623
+
+**Shuffle an Array**
+
+http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
