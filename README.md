@@ -24,7 +24,7 @@ http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript
 
 **Switch Statement**
 
-Originally I used a switch statment in the Player.handleInput() method and was curious as to whether using wasn't best practice as I haven't seen it used very commonly.
+Originally I used a switch statment in the Player.handleInput() method and was curious as to whether using it wasn't best practice as I haven't seen it used very often.
 
 http://stackoverflow.com/questions/6665997/switch-statement-for-greater-than-less-than
 
