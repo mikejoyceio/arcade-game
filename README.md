@@ -17,7 +17,10 @@ http://eloquentjavascript.net/
 https://medium.com/@cmilhench/games-html5-canvas-85ac2470eb2a
 
 **JS Closures**
+
 http://jibbering.com/faq/notes/closures/
+
+http://stackoverflow.com/questions/111102/how-do-javascript-closures-work
 
 **Generate Random Numbers**
 
