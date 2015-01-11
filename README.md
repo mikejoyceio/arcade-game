@@ -22,6 +22,10 @@ http://jibbering.com/faq/notes/closures/
 
 http://stackoverflow.com/questions/111102/how-do-javascript-closures-work
 
+**JS Splice**
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+
 **Generate Random Numbers**
 
 https://gist.github.com/kerimdzhanov/7529623
