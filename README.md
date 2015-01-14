@@ -4,11 +4,13 @@ Website: http://retrofrogger.com
 
 ###Resources
 
-**JavaScript Tutorials**
+**JavaScript Courses**
 
 https://www.udacity.com/course/progress#!/c-ud015-nd
 
 https://github.com/batmanimal/object-oriented-js
+
+**JavaScript eBook**
 
 http://eloquentjavascript.net/
 
