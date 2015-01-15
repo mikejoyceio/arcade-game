@@ -44,6 +44,10 @@ https://gist.github.com/kerimdzhanov/7529623
 
 http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 
+**Removing Objects from an Array**
+
+http://stackoverflow.com/questions/16491758/remove-objects-from-array-by-object-property
+
 **Switch Statement**
 
 Originally I used a switch statment in the Player.handleInput() method and was curious as to whether using it wasn't best practice as I haven't seen it used very often.
