@@ -17,6 +17,8 @@ canvas {
 	}
 }
 
+
+
 /* Button */
 .button {
 	border-radius: 3px;
@@ -107,6 +109,20 @@ footer .how-to-link {
 	left: 0;
 }
 
+/* How To Screen */
+
+.how-to > .content {
+	max-width: 600px;
+}
+
+.how-to .heading {
+	font-size: 40px;
+}
+
+.how-to p {
+	color: #fff;
+	font-family: ArcadeClassic;
+}
 
 /* Game Over Screen */
 .game-over > .content {
