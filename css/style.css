@@ -136,9 +136,10 @@ footer .how-to-link {
 /* Game Over Screen */
 .game-over > .content {
 	max-width: 800px;
-	padding: 15% 10%;
+	margin-bottom: 0;
+	padding: 9% 10%;
 }
 
 .game-over .heading {
-	font-size: 80px;
+	font-size: 100px;
 }
