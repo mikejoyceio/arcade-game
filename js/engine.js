@@ -73,13 +73,8 @@ var Engine = (function(global) {
     }
 
     /* This function is called by main (our game loop) and itself calls all
-     * of the functions which may need to update entity's data. Based on how
-     * you implement your collision detection (when two entities occupy the
-     * same space, for instance when your character should die), you may find
-     * the need to add an additional function call here. For now, we've left
-     * it commented out - you may or may not want to implement this
-     * functionality this way (you could just implement collision detection
-     * on the entities themselves within your app.js file).
+     * functions to update the game entities data. A function is also called to check
+     * for collisions.
      */
     function update(dt) {
         updateEntities(dt);
@@ -201,7 +196,8 @@ var Engine = (function(global) {
 
 						/* If the player has more than one life remaining,
 						 * call the player.updateLives method and remove a life.
-						 * If the player has no more lives remaining, call the reset() function.
+						 * If the player has no more lives remaining, call the 
+						 * reset() function.
 						 */
 						return player.lives > 1 ? player.updateLives('remove', 1) : reset();
 
@@ -209,8 +205,9 @@ var Engine = (function(global) {
     	});
 
     	/* Check gem collisions. 
-    	 * If there is a collision, call the gem.clear() method to clear the gem from 
-    	 * the canvas and call the stats.updateGems to update the gems count and increase the score by 300 points.
+    	 * If there is a collision, call the gem.clear() method to 
+    	 * clear the gem from the canvas and call the stats.updateGems 
+    	 * to update the gems count and increase the score by 300 points.
     	 */
     	if(collision(player, gem)) {
 
