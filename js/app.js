@@ -65,7 +65,6 @@ $(document).ready(function() {
 		gameMusic.play();
 		// Adjust background music volume
 		gameMusic.volume(0.3);
-		gameMusic.pause();
 
 		// Hide the start screen on button click
 		$("#playGame").click(function() { 
