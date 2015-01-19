@@ -14,11 +14,11 @@
  * into this array.
  */
 var allEnemies = [];
+
 /* Pause the game by default to prevent the player moving around
  * when arrow keys are pressed
  */
 var paused = true;
-
 
 // Contants
 var constants = {
@@ -355,7 +355,7 @@ Stats.prototype.score = function() {
 		ctx.textAlign = 'end';
 		ctx.fillText(this.currentScore, 700, 82);
 };
-// Update score
+// Update score stat
 Stats.prototype.updateScore = function() {
 		this.currentScore = this.currentScore + 600;
 };
@@ -367,7 +367,7 @@ Stats.prototype.lives = function() {
 		ctx.textAlign = 'start';
 		ctx.fillText('x '+ this.currentLives, 465, 82);
 };
-// Update lives
+// Update lives stat
 Stats.prototype.updateLives = function(lives) {
 		this.currentLives = lives;
 };
@@ -379,6 +379,7 @@ Stats.prototype.gems = function() {
 		ctx.textAlign = 'start';
 		ctx.fillText('x '+ this.currentGems, 370, 82);
 };
+// Update gem stat
 Stats.prototype.updateGems = function() {
 		this.currentGems++;
 		this.currentScore = this.currentScore + 300;
