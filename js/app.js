@@ -16,7 +16,8 @@
 var allEnemies = [];
 
 /* Pause the game by default to prevent the player moving around
- * when arrow keys are pressed
+ * when arrow keys are pressed. Set to false when the start or
+ * game over screens are hidden from view.
  */
 var paused = true;
 
@@ -276,15 +277,31 @@ Player.prototype.render = function() {
 // Handle the left, up, right & down keyboard arrow keys
 Player.prototype.handleInput = function(key) {
 
+		/* If the left arrow key is pressed and the 
+		 * player is within the left boundary of the
+		 * canvas, allow the player to go move left
+		 */
 		if(key === 'left' && this.x != 0) {
 			this.x = this.xNow + -50;
 		}
+		/* If the up arrow key is pressed and the 
+		 * player is within the top boundary of the
+		 * canvas, allow the player to move upwards.
+		 */
 		if(key === 'up' && this.y != 20) {
 			this.y = this.yNow + -50;
 		}
+		/* If the right arrow key is pressed and the 
+		 * player is within the right boundary of the
+		 * canvas, allow the player to move right.
+		 */
 		if(key === 'right' && this.x != 600) {
 			this.x = this.xNow + 50;
 		}
+		/* If the down arrow key is pressed and the 
+		 * player is within the bottom boundary of the
+		 * canvas, allow the player to move down
+		 */
 		if(key === 'down' && this.y != 470) {
 			this.y = this.yNow + 50;
 		}
