@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'ArcadeClassic';
+  src: url('../font/ARCADECLASSIC.eot'); /* IE9 Compat Modes */
+  src: url('../font/ARCADECLASSIC.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../font/ARCADECLASSIC.woff') format('woff'), /* Modern Browsers */
+       url('../font/ARCADECLASSIC.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../font/ARCADECLASSIC.svg#7367382f3487c257f2693bf0a2a7c5eb') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
