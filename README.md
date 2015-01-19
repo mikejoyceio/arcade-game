@@ -26,29 +26,29 @@ http://gamedev.stackexchange.com/questions/586/what-is-the-fastest-way-to-work-o
 
 https://medium.com/@cmilhench/games-html5-canvas-85ac2470eb2a
 
-**JS Closures**
+**JS - Closures**
 
 http://jibbering.com/faq/notes/closures/
 
 http://stackoverflow.com/questions/111102/how-do-javascript-closures-work
 
-**JS Splice**
+**JS - Array Splice**
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 
-**Generate Random Numbers**
+**JS - Generate Random Numbers**
 
 https://gist.github.com/kerimdzhanov/7529623
 
-**Shuffle an Array**
+**JS - Shuffle an Array**
 
 http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 
-**Removing Objects from an Array**
+**JS - Removing Objects from an Array**
 
 http://stackoverflow.com/questions/16491758/remove-objects-from-array-by-object-property
 
-**Switch Statement**
+**JS - Switch Statement**
 
 Originally I used a switch statment in the Player.handleInput() method and was curious as to whether using it wasn't best practice as I haven't seen it used very often.
 
