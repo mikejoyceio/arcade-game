@@ -8,7 +8,8 @@
  * - Add mute button for game music
  * - Add pause button
  * - Add bonus lives
- * - Make it mobile-friendly
+ * - Add score to game over screen
+ * - Make & tablet it mobile-friendly
  */
 
 /* Enemies Array.
@@ -47,13 +48,13 @@ var constants = {
 		POSITION_X : [0, 100, 200, 300, 400, 500, 600],
 		// Y position array for game elements
 		POSITION_Y : [160, 230, 310, 390],
-		// Canvas left boundary
+		// Left boundary
 		LEFT_BOUNDARY : 0,
-		// Canvas top boundary
+		// Top boundary
 		TOP_BOUNDARY : 20,
-		// Canvas right boundary
+		// Right boundary
 		RIGHT_BOUNDARY : 600,
-		// Canvas bottom boundary
+		// Bottom boundary
 		BOTTOM_BOUNDARY : 470
 };
 
@@ -363,7 +364,7 @@ Level.prototype.update = function() {
 		this.level++;
 		// Span enemies when the level is divisable by 2
 		if(this.level % 2) {
-	  	enemies.spawn(1);
+	  		enemies.spawn(1);
 	 	}
 		player.reset();
 		gem.reset();
