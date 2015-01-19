@@ -8,6 +8,7 @@
  * - Add mute button for game music
  * - Add pause button
  * - Add bonus lives
+ * - Make it mobile-friendly
  */
 
 /* Enemies Array.
