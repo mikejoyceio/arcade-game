@@ -22,23 +22,34 @@ var paused = true;
 
 // Contants
 var constants = {
+		// Default canvas text font family
 		FONT : '20pt ArcadeClassic',
+		// Default canvas text font color
 		FONT_COLOR: 'white',
+		// Game element height
 		ENTITY_HEIGHT : 50,
+		// Game element width
 		ENTITY_WIDTH : 50,
+		// Enemy minimum speed
 		MIN_SPEED : 50,
+		// Enemy max speed
 		MAX_SPEED : 400,
+		// Player's start x-position on the canvas
 		PLAYER_START_X : 300,
+		// Player's start y-position on the canvas
 		PLAYER_START_Y : 470,
+		// X position array for game elements 
 		POSITION_X : [0, 100, 200, 300, 400, 500, 600],
+		// Y position array for game elements
 		POSITION_Y : [160, 230, 310, 390]
 };
 
 
 $(document).ready(function() {
 
-		// Play Background Music
+		// Play background music
 		gameMusic.play();
+		// Adjust background music volume
 		gameMusic.volume(0.3);
 
 		// Hide the start screen on button click
@@ -76,11 +87,17 @@ $(document).ready(function() {
  * Accepts two arguments. The y position on the canvas and the speed. 
  */
 var Enemy = function(positionY, speed) {
+		// Set the enemy's image
     this.sprite = 'images/enemy-bug.png';
+    // Set a random x position on the canvas
     this.x = getRandomInt(-1000, -100);
+    // Set the y position. Determined by the positionY argument
     this.y = positionY;
+    // Set the enemy's height
 		this.height = constants.ENTITY_HEIGHT;
+		// Set the enemy's width
 		this.width = constants.ENTITY_WIDTH;
+		// Set the enemy's speed. Determined by the speed argument
     this.speed = speed;
 };
 /* Update the enemies position on the canvas.
@@ -114,6 +131,9 @@ Enemy.prototype.render = function() {
  * removing enemies from the canvas.
  */
 var Enemies = function() {
+		/* Enemies generated are pushed into this array
+		 * before being pushed into the global allEnemies array
+		 */
 		this.enemiesArray = [];
 };
 /* Spawn Enemies
@@ -153,10 +173,13 @@ var enemies = new Enemies();
  * and reseting a collectable gem.
  */
 var Gem = function() {
-		// Include all the blue, green and orange gem images in to an array
+		// Include the blue, green and orange gem images in an array
 		var gemArray = ['gem-blue.png', 'gem-green.png', 'gem-orange.png'];
+		// Set a random gem image from the gemArray
 		this.sprite = 'images/' + gemArray[getRandomInt(0,2)];
+		// Set the gem's height
 		this.height = constants.ENTITY_HEIGHT;
+		// Set the gem's width
 		this.width = constants.ENTITY_WIDTH;
 		// Set a random x position
 		this.x = constants.POSITION_X[getRandomInt(0, 6)];
@@ -195,12 +218,19 @@ var gem = new Gem();
  * player's position on the canvas and updating the player's lives. 
  */
 var Player = function() {
+		// Set the player's image
 		this.sprite = 'images/char-boy.png';
+		// Set the player's x position on the canvas
 		this.x = constants.PLAYER_START_X;
+		// Set the player's y position on the canvas
 		this.y = constants.PLAYER_START_Y; 
+		// Set the player's height
 		this.height = constants.ENTITY_HEIGHT;
+		// Set the player's width
 		this.width = constants.ENTITY_WIDTH;
-		// Player starts the game with 3 lives
+		/* Set the player's default lives. 
+		 * The player starts the game with 3 lives
+		 */
 		this.lives = 3;
 };
 // Update player position on the canvas
@@ -213,6 +243,7 @@ Player.prototype.reset = function() {
 		this.x = constants.PLAYER_START_X;
 		this.y = constants.PLAYER_START_Y; 
 };
+// Player hit. Called when the player collides with an enemy
 Player.prototype.hit = function() {
 		this.x = constants.PLAYER_START_X;
 		this.y = constants.PLAYER_START_Y;
@@ -225,6 +256,7 @@ Player.prototype.hit = function() {
  * update the stats.
  */
 Player.prototype.updateLives = function(action, value) {
+
 		// Add a life
 		if(action === "add") {
 			this.lives = this.lives + value;
@@ -233,7 +265,9 @@ Player.prototype.updateLives = function(action, value) {
 		if(action === "remove") {
 			this.lives = this.lives - value;	
 		}
+		// Update the lives stats
 		stats.updateLives(this.lives);
+
 };
 // Draw the player on the canvas
 Player.prototype.render = function() {
@@ -241,6 +275,7 @@ Player.prototype.render = function() {
 };
 // Handle the left, up, right & down keyboard arrow keys
 Player.prototype.handleInput = function(key) {
+
 		if(key === 'left' && this.x != 0) {
 			this.x = this.xNow + -50;
 		}
@@ -253,6 +288,7 @@ Player.prototype.handleInput = function(key) {
 		if(key === 'down' && this.y != 470) {
 			this.y = this.yNow + 50;
 		}
+
 };
 
 // Instantiate new Player object
@@ -277,6 +313,7 @@ var Level = function() {
  */
 Level.prototype.update = function() {
 		this.level++;
+		// Span enemies when the level is divisable by 2
 		if(this.level % 2) {
 	  	enemies.spawn(1);
 	 	}
