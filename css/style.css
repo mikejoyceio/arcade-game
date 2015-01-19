@@ -137,10 +137,18 @@ footer .how-to-link {
 .game-over > .content {
 	max-width: 800px;
 	margin-bottom: 0;
-	padding: 9% 10%;
+	padding: 12% 10%;
 }
 
 .game-over .heading {
 	font-size: 100px;
 	margin-bottom: 0;
+}
+
+.game-over img {
+	position: absolute;
+	top: 140px;
+	right: 0;
+	left: 0;
+	margin: auto;	
 }
