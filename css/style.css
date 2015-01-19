@@ -17,7 +17,10 @@ canvas {
 	}
 }
 
-
+.heading {
+	color: #fff;
+	font-family: ArcadeClassic;	
+}
 
 /* Button */
 .button {
