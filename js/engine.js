@@ -25,8 +25,10 @@ var Engine = (function(global) {
         ctx = canvas.getContext('2d'),
         lastTime;
 
-    canvas.width = 505;
-    canvas.height = 606;
+    // Set the canvas width.
+    canvas.width = 707;
+    // Set the canvas height.
+    canvas.height = 707;
     doc.body.appendChild(canvas);
 
     /* This function serves as the kickoff point for the game loop itself
@@ -57,16 +59,17 @@ var Engine = (function(global) {
          * function again as soon as the browser is able to draw another frame.
          */
         win.requestAnimationFrame(main);
-    };
+    }
 
     /* This function does some initial setup that should only occur once,
      * particularly setting the lastTime variable that is required for the
      * game loop.
      */
     function init() {
-        reset();
+        //reset();
         lastTime = Date.now();
         main();
+
     }
 
     /* This function is called by main (our game loop) and itself calls all
@@ -80,7 +83,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function  and loops through all of the
@@ -109,14 +112,15 @@ var Engine = (function(global) {
          */
         var rowImages = [
                 'images/water-block.png',   // Top row is water
+                'images/grass-block.png',
                 'images/stone-block.png',   // Row 1 of 3 of stone
                 'images/stone-block.png',   // Row 2 of 3 of stone
                 'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
+                'images/stone-block.png',   // Row 1 of 2 of grass
                 'images/grass-block.png'    // Row 2 of 2 of grass
             ],
-            numRows = 6,
-            numCols = 5,
+            numRows = 7,
+            numCols = 7,
             row, col;
 
         /* Loop through the number of rows and columns we've defined above
@@ -145,6 +149,7 @@ var Engine = (function(global) {
      * on your enemy and player entities within app.js
      */
     function renderEntities() {
+
         /* Loop through all of the objects within the allEnemies array and call
          * the render function you have defined.
          */
@@ -152,26 +157,113 @@ var Engine = (function(global) {
             enemy.render();
         });
 
+        /* Render player
+         * Renders the player on the canvas.
+         */
         player.render();
+
+        /* Render gem
+         * Renders a single gem on the canvas.
+         */
+        gem.render();     
+
+        /* Render stats
+         * Renders the stat panel and containing elements at top of canvas
+         */
+        stats.render();
+			
     }
 
-    /* This function does nothing but it could have been a good place to
-     * handle game reset states - maybe a new game menu or a game over screen
-     * those sorts of things. It's only called once by the init() method.
+    function checkCollisions() {
+
+			/**
+			* Check for the collision of two entities.
+			* Function accepts two arguments.
+			*/
+			function collision(a, b) {
+			  return a.x < b.x + b.width &&
+			         a.x + a.width > b.x &&
+			         a.y < b.y + b.height &&
+			         a.y + a.height > b.y;
+			}
+
+    	/* Check enemy collisions. 
+    	 * If there is a collision, reset the player's position 
+    	 * and update the players lives or reset the game. 
+    	 */ 
+    	allEnemies.forEach(function(enemy) {
+  			if(collision(player, enemy)) {
+  			
+						/* Reset the players position.
+						 * The Player class can be found in app.js
+						 */	
+						player.hit();
+
+						/* If the player has more than one life remaining,
+						 * call the player.updateLives method and remove a life.
+						 * If the player has no more lives remaining, call the reset() function.
+						 */
+						return player.lives > 1 ? player.updateLives('remove', 1) : reset();
+
+  			}
+    	});
+
+    	/* Check gem collisions. 
+    	 * If there is a collision, call the gem.clear() method to clear the gem from 
+    	 * the canvas and call the stats.updateGems to update the gems count and increase the score by 300 points.
+    	 */
+    	if(collision(player, gem)) {
+
+	    		gem.clear();
+
+	    		stats.updateGems();
+
+    	}
+
+    	/* Check goal collisions. 
+    	 * If the player gets to the other side, call the updateLevel() function.
+    	 */
+    	if(player.y == 70) {
+
+					updateLevel();
+
+			}
+
+    }
+
+    /* Update level.
+     * This function calls the level.update() method. The Level class can be found in app.js.
+     */
+    function updateLevel() {
+
+	    	level.update();
+
+    }
+
+    /* Reset the game.  
+     * This function calls the level.reset() method. The level class can be found in app.js.
      */
     function reset() {
-        // noop
-    }
 
-    /* Go ahead and load all of the images we know we're going to need to
-     * draw our game level. Then set init as the callback method, so that when
-     * all of these images are properly loaded our game will start.
-     */
+	     level.reset();
+
+    }
+ 
+   /* Load all the images we know we're going to need to draw our game level
+    * Then set the init as the callback method, so that when all the images
+    * are loaded the game will start.
+    */
     Resources.load([
         'images/stone-block.png',
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
+        'images/star.png',
+        'images/stat-heart.png',
+        'images/stat-gem.png',
+        'images/gem-blue.png',
+        'images/gem-green.png',
+        'images/gem-orange.png',
         'images/char-boy.png'
     ]);
     Resources.onReady(init);
@@ -180,5 +272,6 @@ var Engine = (function(global) {
      * object when run in a browser) so that developer's can use it more easily
      * from within their app.js files.
      */
+    global.canvas = canvas;
     global.ctx = ctx;
 })(this);
