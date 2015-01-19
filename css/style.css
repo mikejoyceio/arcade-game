@@ -17,6 +17,10 @@ canvas {
 	}
 }
 
+a:hover {
+	cursor: pointer;	
+}
+
 .heading {
 	color: #fff;
 	font-family: ArcadeClassic;	
