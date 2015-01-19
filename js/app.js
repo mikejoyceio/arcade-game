@@ -48,13 +48,13 @@ var constants = {
 		POSITION_X : [0, 100, 200, 300, 400, 500, 600],
 		// Y position array for game elements
 		POSITION_Y : [160, 230, 310, 390],
-		// Left boundary
+		// Left canvas boundary
 		LEFT_BOUNDARY : 0,
-		// Top boundary
+		// Top canvas boundary
 		TOP_BOUNDARY : 20,
-		// Right boundary
+		// Right canvas boundary
 		RIGHT_BOUNDARY : 600,
-		// Bottom boundary
+		// Bottom canvas boundary
 		BOTTOM_BOUNDARY : 470
 };
 
