@@ -74,6 +74,10 @@ http://www.newgrounds.com/audio/listen/594742
 
 I used Gimp to create the 'Retro Frogger' logo.
 
+**Gimp - How to outline text**
+
+http://en.linuxreviews.org/HOWTO_outline_text_in_GIMP
+
 http://www.gimp.org/
 
 **Google Hangouts Q&A**
