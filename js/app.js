@@ -44,7 +44,15 @@ var constants = {
 		// X position array for game elements 
 		POSITION_X : [0, 100, 200, 300, 400, 500, 600],
 		// Y position array for game elements
-		POSITION_Y : [160, 230, 310, 390]
+		POSITION_Y : [160, 230, 310, 390],
+		// Canvas left boundary
+		LEFT_BOUNDARY : 0,
+		// Canvas top boundary
+		TOP_BOUNDARY : 20,
+		// Canvas right boundary
+		RIGHT_BOUNDARY : 600,
+		// Canvas bottom boundary
+		BOTTOM_BOUNDARY : 470
 };
 
 
@@ -301,28 +309,28 @@ Player.prototype.handleInput = function(key) {
 		 * player is within the left boundary of the
 		 * canvas, allow the player to go move left
 		 */
-		if(key === 'left' && this.x != 0) {
+		if(key === 'left' && this.x != constants.LEFT_BOUNDARY) {
 			this.x = this.xNow + -50;
 		}
 		/* If the up arrow key is pressed and the 
 		 * player is within the top boundary of the
 		 * canvas, allow the player to move upwards.
 		 */
-		if(key === 'up' && this.y != 20) {
+		if(key === 'up' && this.y != constants.TOP_BOUNDARY) {
 			this.y = this.yNow + -50;
 		}
 		/* If the right arrow key is pressed and the 
 		 * player is within the right boundary of the
 		 * canvas, allow the player to move right.
 		 */
-		if(key === 'right' && this.x != 600) {
+		if(key === 'right' && this.x != constants.RIGHT_BOUNDARY) {
 			this.x = this.xNow + 50;
 		}
 		/* If the down arrow key is pressed and the 
 		 * player is within the bottom boundary of the
 		 * canvas, allow the player to move down
 		 */
-		if(key === 'down' && this.y != 470) {
+		if(key === 'down' && this.y != constants.BOTTOM_BOUNDARY) {
 			this.y = this.yNow + 50;
 		}
 
