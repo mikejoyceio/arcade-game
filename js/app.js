@@ -7,6 +7,7 @@
  * - Add local storage leader board
  * - Add mute button for game music
  * - Add pause button
+ * - Add bonus lives
  */
 
 /* Enemies Array.
