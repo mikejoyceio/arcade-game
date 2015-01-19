@@ -48,7 +48,7 @@ $(document).ready(function() {
 				// Play the select sound effect
 				gameSelect.play();
 				// Fade in the game music
-				gameMusic.fade(0.3, 0.8, 2000);
+				gameMusic.fade(0.3, 0.7, 2000);
 				/* Unpause the game to allow the player to move around
 				 * when arrow keys are pressed
 				 */
