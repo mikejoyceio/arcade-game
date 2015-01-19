@@ -41,6 +41,8 @@ var constants = {
 		PLAYER_START_X : 300,
 		// Player's start y-position on the canvas
 		PLAYER_START_Y : 470,
+		// Player movement distance
+		PLAYER_MOVEMENT : 50,
 		// X position array for game elements 
 		POSITION_X : [0, 100, 200, 300, 400, 500, 600],
 		// Y position array for game elements
@@ -62,6 +64,7 @@ $(document).ready(function() {
 		gameMusic.play();
 		// Adjust background music volume
 		gameMusic.volume(0.3);
+		gameMusic.pause();
 
 		// Hide the start screen on button click
 		$("#playGame").click(function() { 
@@ -288,11 +291,11 @@ Player.prototype.updateLives = function(action, value) {
 
 		// Add a life
 		if(action === "add") {
-			this.lives = this.lives + value;
+				this.lives = this.lives + value;
 		}
 		// Remove a life
 		if(action === "remove") {
-			this.lives = this.lives - value;	
+				this.lives = this.lives - value;	
 		}
 		// Update the lives stats
 		stats.updateLives(this.lives);
@@ -310,28 +313,28 @@ Player.prototype.handleInput = function(key) {
 		 * canvas, allow the player to go move left
 		 */
 		if(key === 'left' && this.x != constants.LEFT_BOUNDARY) {
-			this.x = this.xNow + -50;
+				this.x = this.xNow + -constants.PLAYER_MOVEMENT;
 		}
 		/* If the up arrow key is pressed and the 
 		 * player is within the top boundary of the
 		 * canvas, allow the player to move upwards.
 		 */
 		if(key === 'up' && this.y != constants.TOP_BOUNDARY) {
-			this.y = this.yNow + -50;
+				this.y = this.yNow + -constants.PLAYER_MOVEMENT;
 		}
 		/* If the right arrow key is pressed and the 
 		 * player is within the right boundary of the
 		 * canvas, allow the player to move right.
 		 */
 		if(key === 'right' && this.x != constants.RIGHT_BOUNDARY) {
-			this.x = this.xNow + 50;
+				this.x = this.xNow + constants.PLAYER_MOVEMENT;
 		}
 		/* If the down arrow key is pressed and the 
 		 * player is within the bottom boundary of the
 		 * canvas, allow the player to move down
 		 */
 		if(key === 'down' && this.y != constants.BOTTOM_BOUNDARY) {
-			this.y = this.yNow + 50;
+				this.y = this.yNow + constants.PLAYER_MOVEMENT;
 		}
 
 };
