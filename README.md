@@ -58,6 +58,24 @@ http://stackoverflow.com/questions/6665997/switch-statement-for-greater-than-les
 
 http://www.dafont.com/arcade-classic-pizz.font
 
+**Howler.js - Web Audio JavaScript Library**
+
+https://github.com/goldfire/howler.js
+
+**Sound Effects**
+
+http://soundbible.com/free-sound-effects-1.html
+
+**Background Music**
+
+http://www.newgrounds.com/audio/listen/594742
+
+**Logo**
+
+I used Gimp to create the 'Retro Frogger' logo.
+
+http://www.gimp.org/
+
 **Google Hangouts Q&A**
 
 https://plus.google.com/u/0/hangouts/onair/watch?hid=hoaevent%2Fcnoi8huerhdgpgde1umpkn97rlg&ytl=z9qYbnCti8U&hl=en&t=165.609
