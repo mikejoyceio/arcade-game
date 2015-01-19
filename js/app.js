@@ -83,6 +83,24 @@ $(document).ready(function() {
 				paused = false;
 		});
 
+		// Show the how to play screen on click
+		$("#howToOpen").click(function() {
+				// Play the select sound effect
+				gameSelect.play();
+				// Fade out the game music
+				gameMusic.fade(0.7, 0.3, 2000);
+				$("#howTo").fadeIn('fast');
+		});
+
+		// Hide the how to play screen on click
+		$("#howToClose").click(function() {
+				// Play the select sound effect
+				gameSelect.play();
+				// Fade in the game music
+				gameMusic.fade(0.3, 0.7, 2000);
+				$("#howTo").fadeOut('fast');
+		});
+
 });
 
 
