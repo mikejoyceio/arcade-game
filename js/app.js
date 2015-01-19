@@ -9,7 +9,7 @@
  * - Add pause button
  * - Add bonus lives
  * - Add score to game over screen
- * - Make & tablet it mobile-friendly
+ * - Make it tablet & mobile friendly
  */
 
 /* Enemies Array.
