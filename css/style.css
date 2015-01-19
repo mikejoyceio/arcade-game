@@ -12,8 +12,8 @@ canvas {
 @media only screen and (min-width: 800px) {
 	canvas {
 		margin-top: 10px;
-		height: 700px;
-		width: 700px;
+		height: 707px;
+		width: 707px;
 	}
 }
 
@@ -32,7 +32,6 @@ canvas {
 }
 
 .button:hover {
-	cursor: pointer;
 	opacity: 0.95;
 }
 
@@ -41,7 +40,6 @@ canvas {
 	display: block;
 	width: 100%;	
 }
-
 
 /* Overlay */
 .overlay {
@@ -73,6 +71,27 @@ header {
 	margin: auto;	
 }
 
+/* Footer */
+footer {
+	padding: 0;
+	width: 100%;
+	margin: auto;
+	position: absolute;
+	text-align: center;
+	left: 0;
+	right: 0;
+	z-index: 999999999;
+	top: 695px;
+}
+
+footer .how-to-link {
+	color: #fff;
+	font-family: ArcadeClassic;	
+	font-size: 20px;
+	word-spacing: 5px;
+	float: left;
+}
+
 /* Start Screen */
 .start-screen > .content {
 	max-width: 600px;	
@@ -88,13 +107,12 @@ header {
 	left: 0;
 }
 
-/* Game Over */
+
+/* Game Over Screen */
 .game-over > .content {
 	max-width: 800px;
 }
 
 .game-over .heading {
-	color: #fff;
-	font-family: ArcadeClassic;	
-	font-size: 10rem;
+	font-size: 80px;
 }
