@@ -24,7 +24,7 @@ var allEnemies = [];
  */
 var paused = true;
 
-// Contants
+// Constants
 var constants = {
 		// Default canvas text font family
 		FONT : '20pt ArcadeClassic',
@@ -310,7 +310,7 @@ Player.prototype.handleInput = function(key) {
 
 		/* If the left arrow key is pressed and the 
 		 * player is within the left boundary of the
-		 * canvas, allow the player to go move left
+		 * canvas, allow the player to go move left.
 		 */
 		if(key === 'left' && this.x != constants.LEFT_BOUNDARY) {
 				this.x = this.xNow + -constants.PLAYER_MOVEMENT;
@@ -331,7 +331,7 @@ Player.prototype.handleInput = function(key) {
 		}
 		/* If the down arrow key is pressed and the 
 		 * player is within the bottom boundary of the
-		 * canvas, allow the player to move down
+		 * canvas, allow the player to move down.
 		 */
 		if(key === 'down' && this.y != constants.BOTTOM_BOUNDARY) {
 				this.y = this.yNow + constants.PLAYER_MOVEMENT;
