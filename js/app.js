@@ -1,5 +1,5 @@
 /**
- * @file overview HTML5 Canvas game project for Udacity's FEND.
+ * @file overview Classic Arcade Game Clone project for Udacity's FEND.
  * @author contact@mikejoyce.me (Mike Joyce) and the Udacity FEND instuctors.
  */
 
