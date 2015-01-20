@@ -62,7 +62,7 @@ http://www.newgrounds.com/audio/listen/594742
 
 https://www.udacity.com/course/viewer#!/c-ud292-nd
 
-**HTML5 Canvas Game**
+**HTML5 Canvas Game Article**
 
 https://medium.com/@cmilhench/games-html5-canvas-85ac2470eb2a
 
