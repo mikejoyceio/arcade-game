@@ -4,6 +4,8 @@ Please point your browser to http://retrofrogger.com to play the game.
 
 Instructions on how to play are included within the game itself.
 
+Resources used or referred to during this project are listed below.
+
 ###Resources
 
 **Object Orientated JavaScript Course**
@@ -15,22 +17,6 @@ https://github.com/batmanimal/object-oriented-js
 **Eloquent JavaScript eBook**
 
 http://eloquentjavascript.net/
-
-**HTML5 Canvas Course**
-
-https://www.udacity.com/course/viewer#!/c-ud292-nd
-
-**HTML5 Canvas Game**
-
-https://medium.com/@cmilhench/games-html5-canvas-85ac2470eb2a
-
-**Collision Detection**
-
-http://stackoverflow.com/questions/15622236/html-5-canvas-shape-collision-test
-
-http://www.html5rocks.com/en/tutorials/canvas/notearsgame/#toc-introduction
-
-http://gamedev.stackexchange.com/questions/586/what-is-the-fastest-way-to-work-out-2d-bounding-box-intersection
 
 **JS - Closures**
 
@@ -60,23 +46,39 @@ Originally I used a switch statment in the Player.handleInput() method and was c
 
 http://stackoverflow.com/questions/6665997/switch-statement-for-greater-than-less-than
 
-**Classic Arcade Style Font**
+**Sound Effects**
 
-http://www.dafont.com/arcade-classic-pizz.font
+http://soundbible.com/free-sound-effects-1.html
 
 **Howler.js - Web Audio JavaScript Library**
 
 https://github.com/goldfire/howler.js
 
-**Sound Effects**
-
-http://soundbible.com/free-sound-effects-1.html
-
 **Background Music**
 
 http://www.newgrounds.com/audio/listen/594742
 
-**Logo**
+**HTML5 Canvas Course**
+
+https://www.udacity.com/course/viewer#!/c-ud292-nd
+
+**HTML5 Canvas Game**
+
+https://medium.com/@cmilhench/games-html5-canvas-85ac2470eb2a
+
+**HTML5 Canvas Collision Detection**
+
+http://stackoverflow.com/questions/15622236/html-5-canvas-shape-collision-test
+
+http://www.html5rocks.com/en/tutorials/canvas/notearsgame/#toc-introduction
+
+http://gamedev.stackexchange.com/questions/586/what-is-the-fastest-way-to-work-out-2d-bounding-box-intersection
+
+**Classic Arcade Style Font**
+
+http://www.dafont.com/arcade-classic-pizz.font
+
+**Retro Frogger Logo**
 
 I used Gimp to create the 'Retro Frogger' logo.
 
