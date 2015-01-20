@@ -6,15 +6,23 @@ Instructions on how to play are included within the game itself.
 
 ###Resources
 
-**JavaScript Courses**
+**Object Orientated JavaScript Course**
 
 https://www.udacity.com/course/progress#!/c-ud015-nd
 
 https://github.com/batmanimal/object-oriented-js
 
-**JavaScript eBook**
+**Eloquent JavaScript eBook**
 
 http://eloquentjavascript.net/
+
+**HTML5 Canvas Course**
+
+https://www.udacity.com/course/viewer#!/c-ud292-nd
+
+**HTML5 Canvas Game**
+
+https://medium.com/@cmilhench/games-html5-canvas-85ac2470eb2a
 
 **Collision Detection**
 
@@ -23,10 +31,6 @@ http://stackoverflow.com/questions/15622236/html-5-canvas-shape-collision-test
 http://www.html5rocks.com/en/tutorials/canvas/notearsgame/#toc-introduction
 
 http://gamedev.stackexchange.com/questions/586/what-is-the-fastest-way-to-work-out-2d-bounding-box-intersection
-
-**HTML5 Canvas**
-
-https://medium.com/@cmilhench/games-html5-canvas-85ac2470eb2a
 
 **JS - Closures**
 
@@ -56,7 +60,7 @@ Originally I used a switch statment in the Player.handleInput() method and was c
 
 http://stackoverflow.com/questions/6665997/switch-statement-for-greater-than-less-than
 
-**Arcade Style Font**
+**Classic Arcade Style Font**
 
 http://www.dafont.com/arcade-classic-pizz.font
 
