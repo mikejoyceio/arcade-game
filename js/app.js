@@ -1,6 +1,6 @@
 /**
  * @file overview Classic Arcade Game Clone project for Udacity's FEND.
- * @author contact@mikejoyce.me (Mike Joyce) and the Udacity FEND instuctors.
+ * @author contact@mikejoyce.io (Mike Joyce) and the Udacity FEND instuctors.
  */
 
 /* TODO:
@@ -132,7 +132,7 @@ var Enemy = function(positionY, speed) {
 		// Set the enemy's speed. Determined by the speed argument
     this.speed = speed;
 };
-/* Update the enemies position on the canvas.
+/* Update the enemy's position on the canvas.
  * Accepts one argument. The dt speed is multiplied by the dt parameter 
  * to ensure the game runs at the same speed for all computers
  */
@@ -372,7 +372,7 @@ Level.prototype.update = function() {
 		levelUp.play();
 };
 /* Reset the level:
- * - Reset to level 1 
+ * - reset to level 1 
  * - reset player
  * - reset enemies
  * - reset gem
@@ -380,8 +380,9 @@ Level.prototype.update = function() {
  * - update player lives
  * - spawn enemies
  * - play game over sound
- * - pause the game to prevent player movement
  * - fade out the game music slightly
+ * - pause the game to prevent player movement
+ * - show game over screen
  */
 Level.prototype.reset = function() {
 		this.level = 1;
