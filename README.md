@@ -1,10 +1,8 @@
-#P03 - Classic Arcade Game Clone
+#Classic Arcade Game Clone
 
-Please point your browser to http://retrofrogger.com to play the game.
+##Website
 
-Instructions on how to play are included within the game itself.
-
-Resources used or referred to during this project are listed below.
+###http://retrofrogger.com
 
 ###Resources
 
