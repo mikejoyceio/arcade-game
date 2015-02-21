@@ -1,7 +1,5 @@
 #Classic Arcade Game Clone
 
-##Website
-
 ###http://retrofrogger.com
 
 ##Resources
