@@ -4,7 +4,7 @@
  */
 
 /* TODO:
- * - Add local storage leader board
+ * - Add leader board
  * - Add mute button for game music
  * - Add pause button
  * - Add bonus lives
