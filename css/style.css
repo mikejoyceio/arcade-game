@@ -160,6 +160,17 @@ footer .how-to-link {
 	margin-bottom: 0;
 }
 
+.game-over .final-score {
+	color: #fff;
+	font-family: ArcadeClassic;
+	font-size: 20px;
+}
+
+.game-over .final-score span {
+	margin-left: 5px;
+	font-size: 24px;
+}
+
 .game-over img {
 	position: absolute;
 	top: 140px;
