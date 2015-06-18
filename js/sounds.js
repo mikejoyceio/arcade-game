@@ -26,7 +26,7 @@ var playerHit = new Howl({
 });
 
 var gameSelect = new Howl({ 
-	urls: ['sounds/select.mp3']
+	urls: ['sounds/blop.mp3']
 });
 
 												    							      

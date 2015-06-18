@@ -145,8 +145,9 @@ var Engine = (function(global) {
      */
     function renderEntities() {
 
-        /* Loop through all of the objects within the allEnemies array and call
-         * the render function you have defined.
+        /* Render Enemies
+         * Loop through all of the objects within the allEnemies array and call
+         * the render method.
          */
         allEnemies.forEach(function(enemy) {
             enemy.render();
@@ -157,10 +158,13 @@ var Engine = (function(global) {
          */
         player.render();
 
-        /* Render gem
-         * Renders a single gem on the canvas.
+        /* Render gems
+         * Loop through all of the objects within the allGems array and call
+         * the render method.
          */
-        gem.render();     
+        allGems.forEach(function(gem) {
+        	gem.render();     
+        });
 
         /* Render stats
          * Renders the stat panel and containing elements at top of canvas
@@ -209,13 +213,15 @@ var Engine = (function(global) {
     	 * clear the gem from the canvas and call the stats.updateGems 
     	 * to update the gems count and increase the score by 300 points.
     	 */
-    	if(collision(player, gem)) {
+    	allGems.forEach(function(gem) {
+	    	if(collision(player, gem)) {
 
-	    		gem.clear();
+		    		gem.clear();
 
-	    		stats.updateGems();
+		    		stats.updateGems();
 
-    	}
+	    	}
+    	});
 
     	/* Check goal collisions. 
     	 * If the player gets to the other side, call the updateLevel() function.

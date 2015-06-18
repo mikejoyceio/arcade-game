@@ -44,6 +44,21 @@ a:hover {
 	opacity: 0.95;
 }
 
+/* Toggle Music */
+
+.toggle-music {
+	color: #fff;
+	position: absolute;
+	top: 10px;
+	right: -200px;
+	font-family: ArcadeClassic;
+	font-size: 17px;
+}
+
+.toggle-music.off {
+	display: none;
+}
+
 /* Responsive image */
 .image-responsive {
 	display: block;
@@ -133,6 +148,13 @@ footer .how-to-link {
 	font-family: ArcadeClassic;
 }
 
+/* Collision Overlay */
+
+.collision {
+	background: red;
+	opacity: 0.2;
+}
+
 /* Game Over Screen */
 .game-over > .content {
 	max-width: 800px;
@@ -143,6 +165,17 @@ footer .how-to-link {
 .game-over .heading {
 	font-size: 100px;
 	margin-bottom: 0;
+}
+
+.game-over .final-score {
+	color: #fff;
+	font-family: ArcadeClassic;
+	font-size: 20px;
+}
+
+.game-over .final-score span {
+	margin-left: 5px;
+	font-size: 24px;
 }
 
 .game-over img {

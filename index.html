@@ -26,6 +26,8 @@
     <!-- Header -->
     <header>
     	<img class="image-responsive" src="images/logo.png">
+    	<a class="js-toggle-music toggle-music on">Music On</a>
+    	<a class="js-toggle-music toggle-music off">Music Off</a>
     </header>
     <!-- /Header -->
 
@@ -58,10 +60,17 @@
 		</div>
     <!--/ How To Play -->
 
+		<!-- Collision -->
+    <div id="collision" class="collision overlay hidden"></div>
+    <!-- /Collision -->
+
 		<!-- Game Over -->
     <div id="gameOver" class="game-over overlay hidden">
     	<div class="content">
 				<h2 class="heading">Game Over</h2>
+				<div class="final-score">
+					Final Score: <span id="score"></span>
+				</div>
 				<a id="playAgain" class="button">Play Again</a>
 				<img class="responsive" src="images/char-boy-dead.png">
 			</div>
