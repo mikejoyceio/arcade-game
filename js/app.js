@@ -338,8 +338,6 @@ Player.prototype.reset = function() {
 Player.prototype.hit = function() {
 		this.x = constants.PLAYER_START_X;
 		this.y = constants.PLAYER_START_Y;
-		$("#collision").show();
-		$("#collision").fadeOut();
 		playerHit.play(); 
 };
 /* Update player lives
@@ -536,6 +534,7 @@ Stats.prototype.updateGems = function() {
 };
 // Reset stats
 Stats.prototype.reset = function() {
+		$("#gameOver #score").html(this.currentScore);
 		this.currentScore = 0;
 		this.currentGems = 0;
 		this.currentLevel = level.level;
