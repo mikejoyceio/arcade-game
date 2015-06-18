@@ -44,6 +44,21 @@ a:hover {
 	opacity: 0.95;
 }
 
+/* Toggle Music */
+
+.toggle-music {
+	color: #fff;
+	position: absolute;
+	top: 10px;
+	right: -200px;
+	font-family: ArcadeClassic;
+	font-size: 17px;
+}
+
+.toggle-music.off {
+	display: none;
+}
+
 /* Responsive image */
 .image-responsive {
 	display: block;
