@@ -148,6 +148,13 @@ footer .how-to-link {
 	font-family: ArcadeClassic;
 }
 
+/* Collision Overlay */
+
+.collision {
+	background: red;
+	opacity: 0.2;
+}
+
 /* Game Over Screen */
 .game-over > .content {
 	max-width: 800px;
