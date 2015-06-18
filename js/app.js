@@ -116,6 +116,20 @@ $(document).ready(function() {
 				$("#howTo").fadeOut('fast');
 		});
 
+		// Toggle game music
+		$(".toggle-music").click(function() {
+			if($(this).hasClass('on')) {
+				gameMusic.pause();
+				$(this).hide();
+				$(".toggle-music.off").show();
+			} 
+			if($(this).hasClass('off')) {
+				gameMusic.play();
+				$(this).hide();
+				$(".toggle-music.on").show();
+			}
+		});
+
 });
 
 
