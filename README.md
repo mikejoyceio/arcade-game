@@ -4,7 +4,7 @@ Recreated the classic arcade game Frogger with provided visual assets and a game
 
 ##Resources
 
-<br><br><br><br>
+<br>
 
 #####JavaScript
 
@@ -17,6 +17,8 @@ Recreated the classic arcade game Frogger with provided visual assets and a game
 - [StackOverflow: Hot to shuffle an array](http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
 - [StackOverflow: Removing objects from an array](http://stackoverflow.com/questions/16491758/remove-objects-from-array-by-object-property)
 - [StackOverflow: Switch statements vs. if else](http://stackoverflow.com/questions/6665997/switch-statement-for-greater-than-less-than)
+
+<br>
 
 #####HTML5 Canvas
 
