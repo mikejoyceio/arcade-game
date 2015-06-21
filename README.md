@@ -6,7 +6,7 @@ The task was to recreate the classic arcade game [Frogger](https://en.wikipedia.
 
 ##Resources
 
-#####JavaScript
+######JavaScript
 
 - [Udacity: Object Orientated Javascript](https://www.udacity.com/course/progress#!/c-ud015-nd)
 - [Eloquent Javascript](http://eloquentjavascript.net/)
@@ -18,7 +18,7 @@ The task was to recreate the classic arcade game [Frogger](https://en.wikipedia.
 - [StackOverflow: Removing objects from an array](http://stackoverflow.com/questions/16491758/remove-objects-from-array-by-object-property)
 - [StackOverflow: Switch statements vs. if else](http://stackoverflow.com/questions/6665997/switch-statement-for-greater-than-less-than) <br>
 
-#####HTML5 Canvas
+######HTML5 Canvas
 
 - [Udacity: HTML5 Canvas Basics](https://www.udacity.com/course/viewer#!/c-ud292-nd)
 - [Medium: HTML5 Canvas Games](https://medium.com/@cmilhench/games-html5-canvas-85ac2470eb2a) By InfectiousGrin
@@ -26,11 +26,11 @@ The task was to recreate the classic arcade game [Frogger](https://en.wikipedia.
 - [HTML5 Rocks: No Tears Guide to HTML5 Games](http://www.html5rocks.com/en/tutorials/canvas/notearsgame/#toc-introduction)
 - [StackExchange GameDev: What is the fastest way to work out 2D bounding box intersection?](http://gamedev.stackexchange.com/questions/586/what-is-the-fastest-way-to-work-out-2d-bounding-box-intersection)
 
-#####Web Font
+######Web Font
 
 - [Classic Arcade Style Font](http://www.dafont.com/arcade-classic-pizz.font) By Pizzadude
 
-#####Sound Effects
+######Sound Effects
 
 - [Howler.js: Web Audio JavaScript Library](https://github.com/goldfire/howler.js)
 - [Sound Bible: Sound effecs library](http://soundbible.com/free-sound-effects-1.html)
