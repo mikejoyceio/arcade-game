@@ -1,6 +1,8 @@
 #Classic Arcade Game Clone
 
-Recreated the classic arcade game Frogger with provided visual assets and a game loop engine.
+Project #3 of the [Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001).
+
+The task was to recreate the classic arcade game [Frogger](https://en.wikipedia.org/wiki/Frogger) with provided visual assets and a game loop engine.
 
 <br>
 
