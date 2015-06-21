@@ -4,8 +4,6 @@ Project #3 of the [Front-End Web Developer Nanodegree](https://www.udacity.com/c
 
 The task was to recreate the classic arcade game [Frogger](https://en.wikipedia.org/wiki/Frogger) with provided visual assets and a game loop engine.
 
-<br>
-
 ##Resources
 
 #####JavaScript
