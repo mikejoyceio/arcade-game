@@ -2,9 +2,9 @@
 
 Recreated the classic arcade game Frogger with provided visual assets and a game loop engine.
 
-##Resources
-
 <br>
+
+##Resources
 
 #####JavaScript
 
@@ -16,9 +16,7 @@ Recreated the classic arcade game Frogger with provided visual assets and a game
 - [StackOverflow: How do JavaScript closures work?](http://stackoverflow.com/questions/111102/how-do-javascript-closures-work)
 - [StackOverflow: Hot to shuffle an array](http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
 - [StackOverflow: Removing objects from an array](http://stackoverflow.com/questions/16491758/remove-objects-from-array-by-object-property)
-- [StackOverflow: Switch statements vs. if else](http://stackoverflow.com/questions/6665997/switch-statement-for-greater-than-less-than)
-
-<br>
+- [StackOverflow: Switch statements vs. if else](http://stackoverflow.com/questions/6665997/switch-statement-for-greater-than-less-than) <br>
 
 #####HTML5 Canvas
 
