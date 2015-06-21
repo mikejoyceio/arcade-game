@@ -2,7 +2,7 @@
 
 Recreated the classic arcade game Frogger with provided visual assets and a game loop engine.
 
-##Resources
+##Resources          
 
 #####JavaScript
 
