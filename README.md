@@ -6,6 +6,10 @@ The task was to recreate the classic arcade game [Frogger](https://en.wikipedia.
 
 ##Resources
 
+######Package Management 
+
+- [Bower](http://bower.io/docs/api/)
+
 ######JavaScript
 
 - [Udacity: Object Orientated Javascript](https://www.udacity.com/course/progress#!/c-ud015-nd)
