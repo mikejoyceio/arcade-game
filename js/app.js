@@ -338,8 +338,7 @@ Player.prototype.reset = function() {
 Player.prototype.hit = function() {
 		this.x = constants.PLAYER_START_X;
 		this.y = constants.PLAYER_START_Y;
-		$("#collision").show();
-		$("#collision").fadeOut();
+		$("#collision").show().fadeOut();
 		playerHit.play(); 
 };
 /* Update player lives
