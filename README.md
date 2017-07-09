@@ -34,7 +34,7 @@ $ open "http://localhost:8000"
 
 ## Resources
 
-######Package Management
+###### Package Management
 
 - [Bower](http://bower.io/docs/api/)
 
