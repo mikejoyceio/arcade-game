@@ -1,8 +1,8 @@
-# Classic Arcade Game Clone
+# Retro Frogger
 
 ###### Project Overview
 
-Project #3 of Udacity's [Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001). The task was to recreate the classic arcade game [Frogger](https://en.wikipedia.org/wiki/Frogger) with provided visual assets and a game loop engine by adding a number of entities to the game including player characters, enemies and collectable items.
+A classic [Frogger](https://en.wikipedia.org/wiki/Frogger) arcade game clone.
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ Point your browser to http://retrofrogger.com
 
 ```
 $ git clone https://github.com/mikejoyceio/arcade-game
-````
+```
 
 ###### 2. Serve the application
 
