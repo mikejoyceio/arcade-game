@@ -34,10 +34,6 @@ $ open "http://localhost:8000"
 
 ## Resources
 
-###### Package Management
-
-- [Bower](http://bower.io/docs/api/)
-
 ###### Web Font
 
 - [Classic Arcade Style Font](http://www.dafont.com/arcade-classic-pizz.font) By Pizzadude
