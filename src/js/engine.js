@@ -14,13 +14,16 @@
  * a little simpler to work with.
  */
 
-var Engine = (function(global) {
+import { Game } from './game.js';
+import { Resources } from './resources.js';
+
+export const Engine = (function() {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
      * set the canvas elements height/width and add it to the DOM.
      */
-    var doc = global.document,
-        win = global.window,
+    var doc = window.document,
+        win = window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
         lastTime;
@@ -89,10 +92,10 @@ var Engine = (function(global) {
      * render methods.
      */
     function updateEntities(dt) {
-        allEnemies.forEach(function(enemy) {
+        Game.allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
-        player.update();
+        Game.player.update();
     }
 
     /* This function initially draws the "game level", it will then call
@@ -106,13 +109,13 @@ var Engine = (function(global) {
          * for that particular row of the game level.
          */
         var rowImages = [
-                'images/water-block.png',   // Top row is water
-                'images/grass-block.png',
-                'images/stone-block.png',   // Row 1 of 3 of stone
-                'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/stone-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'dist/images/water-block.png',   // Top row is water
+                'dist/images/grass-block.png',
+                'dist/images/stone-block.png',   // Row 1 of 3 of stone
+                'dist/images/stone-block.png',   // Row 2 of 3 of stone
+                'dist/images/stone-block.png',   // Row 3 of 3 of stone
+                'dist/images/stone-block.png',   // Row 1 of 2 of grass
+                'dist/images/grass-block.png'    // Row 2 of 2 of grass
             ],
             numRows = 7,
             numCols = 7,
@@ -149,28 +152,28 @@ var Engine = (function(global) {
          * Loop through all of the objects within the allEnemies array and call
          * the render method.
          */
-        allEnemies.forEach(function(enemy) {
+        Game.allEnemies.forEach(function(enemy) {
             enemy.render();
         });
 
         /* Render player
          * Renders the player on the canvas.
          */
-        player.render();
+        Game.player.render();
 
         /* Render gems
          * Loop through all of the objects within the allGems array and call
          * the render method.
          */
-        allGems.forEach(function(gem) {
-        	gem.render();     
+        Game.allGems.forEach(function(gem) {
+        	gem.render();
         });
 
         /* Render stats
          * Renders the stat panel and containing elements at top of canvas
          */
-        stats.render();
-			
+        Game.stats.render();
+
     }
 
     function checkCollisions() {
@@ -186,47 +189,47 @@ var Engine = (function(global) {
 			         a.y + a.height > b.y;
 			}
 
-    	/* Check enemy collisions. 
-    	 * If there is a collision, reset the player's position 
-    	 * and update the players lives or reset the game. 
-    	 */ 
-    	allEnemies.forEach(function(enemy) {
-  			if(collision(player, enemy)) {
-  			
+    	/* Check enemy collisions.
+    	 * If there is a collision, reset the player's position
+    	 * and update the players lives or reset the game.
+    	 */
+    	Game.allEnemies.forEach(function(enemy) {
+  			if(collision(Game.player, enemy)) {
+
 						/* Reset the players position.
 						 * The Player class can be found in app.js
-						 */	
-						player.hit();
+						 */
+						Game.player.hit();
 
 						/* If the player has more than one life remaining,
 						 * call the player.updateLives method and remove a life.
-						 * If the player has no more lives remaining, call the 
+						 * If the player has no more lives remaining, call the
 						 * reset() function.
 						 */
-						return player.lives > 1 ? player.updateLives('remove', 1) : reset();
+						return Game.player.lives > 1 ? Game.player.updateLives('remove', 1) : reset();
 
   			}
     	});
 
-    	/* Check gem collisions. 
-    	 * If there is a collision, call the gem.clear() method to 
-    	 * clear the gem from the canvas and call the stats.updateGems 
+    	/* Check gem collisions.
+    	 * If there is a collision, call the gem.clear() method to
+    	 * clear the gem from the canvas and call the stats.updateGems
     	 * to update the gems count and increase the score by 300 points.
     	 */
-    	allGems.forEach(function(gem) {
-	    	if(collision(player, gem)) {
+    	Game.allGems.forEach(function(gem) {
+	    	if(collision(Game.player, gem)) {
 
 		    		gem.clear();
 
-		    		stats.updateGems();
+		    		Game.stats.updateGems();
 
 	    	}
     	});
 
-    	/* Check goal collisions. 
+    	/* Check goal collisions.
     	 * If the player gets to the other side, call the updateLevel() function.
     	 */
-    	if(player.y == 70) {
+    	if(Game.player.y == 70) {
 
 					updateLevel();
 
@@ -239,34 +242,34 @@ var Engine = (function(global) {
      */
     function updateLevel() {
 
-	    	level.update();
+	    	Game.level.update();
 
     }
 
-    /* Reset the game.  
+    /* Reset the game.
      * This function calls the level.reset() method. The level class can be found in app.js.
      */
     function reset() {
 
-	     level.reset();
+	     Game.level.reset();
 
     }
- 
+
    /* Load all the images we know we're going to need to draw our game level
     * Then set the init as the callback method, so that when all the images
     * are loaded the game will start.
     */
     Resources.load([
-        'images/stone-block.png',
-        'images/water-block.png',
-        'images/grass-block.png',
-        'images/enemy-bug.png',
-        'images/stat-heart.png',
-        'images/stat-gem.png',
-        'images/gem-blue.png',
-        'images/gem-green.png',
-        'images/gem-orange.png',
-        'images/char-boy.png'
+        'dist/images/stone-block.png',
+        'dist/images/water-block.png',
+        'dist/images/grass-block.png',
+        'dist/images/enemy-bug.png',
+        'dist/images/stat-heart.png',
+        'dist/images/stat-gem.png',
+        'dist/images/gem-blue.png',
+        'dist/images/gem-green.png',
+        'dist/images/gem-orange.png',
+        'dist/images/char-boy.png'
     ]);
     Resources.onReady(init);
 
@@ -274,6 +277,8 @@ var Engine = (function(global) {
      * object when run in a browser) so that developer's can use it more easily
      * from within their app.js files.
      */
-    global.canvas = canvas;
-    global.ctx = ctx;
-})(this);
+    return {
+      canvas,
+      ctx
+    }
+})();

@@ -1,0 +1,43 @@
+
+// Fonts
+
+@font-face {
+  font-family: 'ArcadeClassic';
+  src: url('ARCADECLASSIC.eot');
+  src: url('ARCADECLASSIC.eot?#iefix') format('embedded-opentype'),
+       url('ARCADECLASSIC.woff') format('woff'),
+       url('ARCADECLASSIC.ttf')  format('truetype'),
+       url('ARCADECLASSIC.svg#7367382f3487c257f2693bf0a2a7c5eb') format('svg');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin font-family($family) {
+  @if $family == primary {
+    font-family: 'ArcadeClassic', sans-serif;
+  }
+  @if $family == secondary {
+    font-family: sans-serif;
+  }
+}
+
+@mixin font-weight($weight) {
+  @if $weight == extra-light {
+    font-weight: 200;
+  }
+  @if $weight == light {
+    font-weight: 300;
+  }
+  @if $weight == regular {
+    font-weight: 400;
+  }
+  @if $weight == medium {
+    font-weight: 500;
+  }
+  @if $weight == bold {
+    font-weight: 600;
+  }
+  @if $weight == extra-bold {
+    font-weight: 900;
+  }
+}

@@ -1,0 +1,21 @@
+
+// Canvas
+
+canvas {
+  width: 90%;
+  height: 90%;
+  transition: all 1s linear;
+}
+
+@media only screen and (min-width: 800px) {
+  canvas {
+    margin-top: 10px;
+    height: 707px;
+    width: 707px;
+  }
+}
+
+.image-responsive {
+  display: block;
+  width: 100%;
+}

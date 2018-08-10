@@ -1,0 +1,39 @@
+
+// Typography
+
+body {
+  @include font-family(primary);
+  background: #202020;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include text-transform(uppercase);
+  @include font-weight(extra-bold);
+  @include font-family(secondary);
+}
+
+@mixin text($type) {
+  @if $type == primary {
+    @include font-family(primary);
+    color: color(neutral-dark);
+  }
+  @if $type == secondary {
+    @include font-family(secondary);
+    color: color(neutral-grey);
+  }
+}
+
+p {
+  @include text(primary);
+}
+
+.text-primary,
+%text-primary {
+  @include text(primary);
+}
+
+.text-secondary,
+%text-secondary {
+  @include text(secondary);
+}

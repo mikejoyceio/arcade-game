@@ -1,0 +1,42 @@
+{
+  "name": "retro-frogger",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Mike Joyce <hello@mikejoyce.io>",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^9.0.2",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "next",
+    "favicons-webpack-plugin": "^0.0.9",
+    "file-loader": "^1.1.11",
+    "font-awesome": "^4.7.0",
+    "foundation-sites": "^6.5.0-rc.2",
+    "imagemin-webpack-plugin": "^2.2.0",
+    "jquery": "^3.3.1",
+    "motion-ui": "^2.0.3",
+    "node-sass": "^4.9.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
+    "postcss-loader": "^2.1.6",
+    "resolve-url-loader": "^2.3.0",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.16.3",
+    "what-input": "^5.1.1"
+  },
+  "scripts": {
+    "dev": "webpack -d --watch",
+    "prod": "webpack -p"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.0"
+  },
+  "description": "A classic Frogger arcade game clone",
+  "repository": "https://github.com/mikejoyceio/arcade-game.git"
+}

@@ -1,0 +1,7 @@
+
+# Browser support
+# https://github.com/browserslist/browserslist#config-file
+
+last 2 version
+> 1%
+#IE 11

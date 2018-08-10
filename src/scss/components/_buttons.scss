@@ -1,0 +1,52 @@
+
+// Buttons
+
+.button, button {
+  margin-bottom: 0;
+
+  &.primary {
+
+    &:hover,
+    &:focus {
+
+    }
+  }
+
+  &.secondary {
+
+    &:hover,
+    &:focus {
+
+    }
+  }
+
+  &.small {
+
+  }
+
+  &.medium {
+
+  }
+
+  &.large {
+
+  }
+}
+
+/* Button */
+.button {
+  border-radius: 3px;
+  display: inline-block;
+  padding: 6px 40px;
+  margin: 65px;
+  background: #68d44f;
+  font-family: ArcadeClassic;
+  color: #fff;
+  font-size: 29px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 1px green;
+}
+
+.button:hover {
+  opacity: 0.95;
+}
