@@ -1,9 +1,13 @@
-/* Game Sounds
- * howler.js is an audio library for the modern web.
- * It defaults to Web Audio API and falls back to HTML5 Audio.
- * Docs: https://github.com/goldfire/howler.js/
+/**
+ * @file SFX
+ * @author Mike Joyce [hello@mikejoyce.io]
  */
 
+/**
+ * Howler
+ * @external'howler'
+ * @see {@link https://www.npmjs.com/package/howler}
+ */
 import { Howler } from 'howler';
 
 export const gameMusic = new Howl({
@@ -30,5 +34,3 @@ export const playerHit = new Howl({
 export const gameSelect = new Howl({
 	src: ['src/sounds/blop.mp3']
 });
-
-
