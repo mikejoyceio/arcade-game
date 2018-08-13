@@ -128,13 +128,13 @@ export const Engine = (function() {
      * @type {Array}
      */
     const rowImages = [
-      'dist/images/water-block.png',
-      'dist/images/grass-block.png',
-      'dist/images/stone-block.png',
-      'dist/images/stone-block.png',
-      'dist/images/stone-block.png',
-      'dist/images/stone-block.png',
-      'dist/images/grass-block.png'
+      `${Resources.path}/water-block.png`,
+      `${Resources.path}/grass-block.png`,
+      `${Resources.path}/stone-block.png`,
+      `${Resources.path}/stone-block.png`,
+      `${Resources.path}/stone-block.png`,
+      `${Resources.path}/stone-block.png`,
+      `${Resources.path}/grass-block.png`
     ];
 
     /**
@@ -297,16 +297,16 @@ export const Engine = (function() {
    * will start.
    */
   Resources.load([
-    'dist/images/stone-block.png',
-    'dist/images/water-block.png',
-    'dist/images/grass-block.png',
-    'dist/images/enemy-bug.png',
-    'dist/images/stat-heart.png',
-    'dist/images/stat-gem.png',
-    'dist/images/gem-blue.png',
-    'dist/images/gem-green.png',
-    'dist/images/gem-orange.png',
-    'dist/images/char-boy.png'
+    `${Resources.path}/stone-block.png`,
+    `${Resources.path}/water-block.png`,
+    `${Resources.path}/grass-block.png`,
+    `${Resources.path}/enemy-bug.png`,
+    `${Resources.path}/stat-heart.png`,
+    `${Resources.path}/stat-gem.png`,
+    `${Resources.path}/gem-blue.png`,
+    `${Resources.path}/gem-green.png`,
+    `${Resources.path}/gem-orange.png`,
+    `${Resources.path}/char-boy.png`
   ]);
   Resources.onReady(init);
 

@@ -52,7 +52,10 @@ const Constants = {
     RIGHT_BOUNDARY : 600,
 
     // Bottom canvas boundary
-    BOTTOM_BOUNDARY : 470
+    BOTTOM_BOUNDARY : 470,
+
+    // Image path
+    IMAGE_PATH: 'dist/images'
 
 }
 

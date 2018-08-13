@@ -20,7 +20,7 @@ export const Player = function() {
   const self = this;
 
   // Set the player's image
-  this.sprite = 'dist/images/char-boy.png';
+  this.sprite = `${Resources.path}/char-boy.png`;
 
   // Set the player's x position on the canvas
   this.x = Constants.PLAYER_START_X;

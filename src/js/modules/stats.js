@@ -78,7 +78,7 @@ Stats.prototype.updateScore = function() {
  * @memberOf Stats
  */
 Stats.prototype.lives = function() {
-  Engine.ctx.drawImage(Resources.get('dist/images/stat-heart.png'), 430, 62);
+  Engine.ctx.drawImage(Resources.get(`${Resources.path}/stat-heart.png`), 430, 62);
   Engine.ctx.font = this.font;
   Engine.ctx.fontStyle = this.fontColor;
   Engine.ctx.textAlign = 'start';
@@ -99,7 +99,7 @@ Stats.prototype.updateLives = function(lives) {
  * @memberOf Stats
  */
 Stats.prototype.gems = function() {
-  Engine.ctx.drawImage(Resources.get('dist/images/stat-gem.png'), 340, 62);
+  Engine.ctx.drawImage(Resources.get(`${Resources.path}/stat-gem.png`), 340, 62);
   Engine.ctx.font = this.font;
   Engine.ctx.fontStyle = this.fontColor;
   Engine.ctx.textAlign = 'start';

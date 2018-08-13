@@ -17,7 +17,7 @@ import { Resources } from 'resources';
 export const Enemy = function(positionY, speed) {
 
   // Set the enemy's image
-  this.sprite = 'dist/images/enemy-bug.png';
+  this.sprite = `${Resources.path}/enemy-bug.png`;
 
   // Set a random x position on the canvas
   this.x = Helpers.getRandomInt(-1000, -100);

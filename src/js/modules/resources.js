@@ -3,6 +3,8 @@
  * @author Mike Joyce [hello@mikejoyce.io]
  */
 
+import Constants from 'Constants';
+
 export const Resources = (function() {
 
   /**
@@ -22,6 +24,12 @@ export const Resources = (function() {
    * @type {Array}
    */
   const readyCallbacks = [];
+
+  /**
+   * path - relative path to images
+   * @type {String}
+   */
+  const path = Constants.IMAGE_PATH;
 
   /**
    * load
@@ -135,10 +143,11 @@ export const Resources = (function() {
    * Return public functions
    */
   return {
-    load,
     get,
+    isReady,
+    load,
     onReady,
-    isReady
+    path
   };
 
 })();

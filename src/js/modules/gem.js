@@ -20,7 +20,7 @@ export const Gem = function(positionX, positionY) {
   const gemArray = ['gem-blue.png', 'gem-green.png', 'gem-orange.png'];
 
   // Set a random gem image from the gemArray
-  this.sprite = 'dist/images/' + gemArray[Helpers.getRandomInt(0,2)];
+  this.sprite = `${Resources.path}/${gemArray[Helpers.getRandomInt(0,2)]}`;
 
   // Set the gem's height
   this.height = Constants.ENTITY_HEIGHT;
