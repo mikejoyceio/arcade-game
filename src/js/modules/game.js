@@ -11,15 +11,15 @@
  */
 
 import Constants from 'Constants';
-import * as Helpers from 'helpers'
-import * as Music from 'music';
-import * as SFX from 'sfx';
 import { Engine } from 'engine';
 import { Player } from 'player';
-import { Resources } from 'resources';
 import { Stats } from 'stats';
 import { Enemies } from 'enemies';
 import { Gems } from 'gems';
+import { Level } from 'level';
+import * as Helpers from 'helpers'
+import * as Music from 'music';
+import * as SFX from 'sfx';
 
 export const Game = (function() {
 
@@ -137,89 +137,6 @@ export const Game = (function() {
   // Instantiate a new Gems object
   const gems = new Gems();
 
-  /**
-   * @class Level - responsible for keeping track of and reseting the level
-   * @constructor
-   */
-  const Level = function() {
-  	this.level = 1;
-  };
-
-  /**
-   * update - updates the level
-   * @memberOf Level
-   */
-  Level.prototype.update = function() {
-
-    // Increase level
-    this.level++;
-
-    // Span enemies when the level is divisable by 2
-    if (this.level % 2) {
-      enemies.spawn(1);
-    }
-
-    // Reset gems
-    gems.reset();
-
-    // Spawn a random amount of collectable gems
-    gems.spawn(Helpers.getRandomInt(2,4));
-
-    // Reset player's position
-    player.reset();
-
-    // Update level stat
-    stats.updateLevel(this.level);
-
-    // Update the score
-    stats.updateScore();
-
-    //  Play level up sound
-    SFX.levelUp.play();
-
-  };
-
-  /**
-   * reset
-   * @memberOf Level
-   */
-  Level.prototype.reset = function() {
-
-    // Reset to level 1
-    this.level = 1;
-
-    // Reset player's position
-    player.reset();
-
-    // Reset enemies
-    enemies.reset();
-
-    // Reset stats
-    stats.reset();
-
-    // Update player lives
-    player.updateLives('add', 2);
-
-    // Spawn enemies
-    enemies.spawn(2);
-
-    // Play game over sound
-    SFX.gameOver.play();
-
-    // Fade out the game music slightly
-    Music.track.fade(1.0, 0.3, 1000);
-
-    // Pause the game to prevent player movement
-    paused = true;
-
-    // Show game over screen
-    $('#gameOver').show();
-
-  };
-
-  // Instantiate a new level object
-  const level = new Level();
-
   // Instatiate a new Stats object
   const stats = new Stats();
 
@@ -228,6 +145,9 @@ export const Game = (function() {
 
   // Instantiate a new Enemies object
   const enemies = new Enemies();
+
+  // Instantiate a new level object
+  const level = new Level();
 
   /**
    * Listen for key presses and call the player.handleInput function if the game isn't paused.
@@ -253,6 +173,7 @@ export const Game = (function() {
    */
   return {
     allEnemies,
+    gems,
     allGems,
     player,
     stats,
