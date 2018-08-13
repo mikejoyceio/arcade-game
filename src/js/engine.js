@@ -12,7 +12,7 @@ export const Engine = (function() {
    * canvas
    * @type {Object}
    */
-  var canvas = window.document.createElement('canvas');
+  const canvas = window.document.createElement('canvas');
 
   /**
    * Set the canvas width
@@ -30,13 +30,13 @@ export const Engine = (function() {
    * ctx
    * @type {Object}
    */
-  var ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d');
 
   /**
    * lastTime
    * @type {string}
    */
-  var lastTime;
+  let lastTime;
 
   /**
    * Append the canvas
@@ -59,13 +59,13 @@ export const Engine = (function() {
      * now
      * @type {string}
      */
-    var now = Date.now();
+    const now = Date.now();
 
     /**
      * deltaTime
      * @type {string}
      */
-    var deltaTime = (now - lastTime) / 1000.0;
+    const deltaTime = (now - lastTime) / 1000.0;
 
     /**
      * Call update/render functions
@@ -127,7 +127,7 @@ export const Engine = (function() {
      * rowImages - holds the relative URLs of the row images
      * @type {Array}
      */
-    var rowImages = [
+    const rowImages = [
       'dist/images/water-block.png',
       'dist/images/grass-block.png',
       'dist/images/stone-block.png',
@@ -141,23 +141,23 @@ export const Engine = (function() {
      * totalRows
      * @type {Number}
      */
-    var totalRows = 7;
+    const totalRows = 7;
 
     /**
      * totalColumns
      * @type {Number}
      */
-    var totalColumns = 7;
+    const totalColumns = 7;
 
     /**
      * row
      */
-    var row;
+    let row;
 
     /**
      * column
      */
-    var column;
+    let column;
 
     /* Loop through the number of rows and columns we've defined above
      * and, using the rowImages array, draw the correct image for that

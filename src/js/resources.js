@@ -9,19 +9,19 @@ export const Resources = (function() {
    * resourceCache
    * @type {Object}
    */
-  var resourceCache = {};
+  const resourceCache = {};
 
   /**
    * loading
    * @type {Array}
    */
-  var loading = [];
+  const loading = [];
 
   /**
    * readyCallbacks
    * @type {Array}
    */
-  var readyCallbacks = [];
+  const readyCallbacks = [];
 
   /**
    * load
@@ -68,7 +68,7 @@ export const Resources = (function() {
         /**
          * The URL has not been loaded previously, and has not been cached
          */
-        var img = new Image();
+        const img = new Image();
 
         img.onload = function() {
 
@@ -114,8 +114,8 @@ export const Resources = (function() {
    * @return {Boolean}
    */
   function isReady() {
-    var ready = true;
-    for (var k in resourceCache) {
+    let ready = true;
+    for (const k in resourceCache) {
       if (resourceCache.hasOwnProperty(k) && !resourceCache[k]) {
         ready = false;
       }
