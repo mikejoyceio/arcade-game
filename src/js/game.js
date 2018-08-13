@@ -13,7 +13,8 @@
 import * as SFX from './sfx.js';
 import * as Music from './music.js';
 import { Engine } from './engine.js';
-import { Resources } from './resources';
+import { Resources } from './resources.js';
+import * as Helpers from './helpers.js'
 
 export const Game = (function() {
 
@@ -191,7 +192,7 @@ export const Game = (function() {
     this.sprite = 'dist/images/enemy-bug.png';
 
     // Set a random x position on the canvas
-    this.x = getRandomInt(-1000, -100);
+    this.x = Helpers.getRandomInt(-1000, -100);
 
     // Set the y position. Determined by the positionY argument
     this.y = positionY;
@@ -226,7 +227,7 @@ export const Game = (function() {
      * the left side of Engine.canvas.
     */
     if (this.x > Engine.canvas.width) {
-      this.x = getRandomInt(-2000, -100);
+      this.x = Helpers.getRandomInt(-2000, -100);
     }
 
   };
@@ -263,11 +264,11 @@ export const Game = (function() {
 
   	for (let i = 0; i < total; i++) {
 
-  		// Call the getRandomInt function and set the speed of the enemy.
-  		const speed = getRandomInt(constants.MIN_SPEED, constants.MAX_SPEED);
+  		// Call the Helpers.getRandomInt function and set the speed of the enemy.
+  		const speed = Helpers.getRandomInt(constants.MIN_SPEED, constants.MAX_SPEED);
 
-  		// Call the getRandomInt function and set the players y position on the Engine.canvas.
-  		const position = getRandomInt(0, 3);
+  		// Call the Helpers.getRandomInt function and set the players y position on the Engine.canvas.
+  		const position = Helpers.getRandomInt(0, 3);
 
   		// Instatiate a new enemy object.
   		this.enemiesArray[allEnemies.length] = new Enemy(constants.POSITION_Y[position], speed);
@@ -304,7 +305,7 @@ export const Game = (function() {
   	const gemArray = ['gem-blue.png', 'gem-green.png', 'gem-orange.png'];
 
   	// Set a random gem image from the gemArray
-  	this.sprite = 'dist/images/' + gemArray[getRandomInt(0,2)];
+  	this.sprite = 'dist/images/' + gemArray[Helpers.getRandomInt(0,2)];
 
   	// Set the gem's height
   	this.height = constants.ENTITY_HEIGHT;
@@ -375,11 +376,11 @@ export const Game = (function() {
 
     for (let i = 0; i < total; i++) {
 
-      // Call the getRandomInt function and set the gems x position on the Engine.canvas.
-      const positionX = getRandomInt(0, 6);
+      // Call the Helpers.getRandomInt function and set the gems x position on the Engine.canvas.
+      const positionX = Helpers.getRandomInt(0, 6);
 
-      // Call the getRandomInt function and set the gems y position on the Engine.canvas.
-      const positionY = getRandomInt(0, 3);
+      // Call the Helpers.getRandomInt function and set the gems y position on the Engine.canvas.
+      const positionY = Helpers.getRandomInt(0, 3);
 
       // Instatiate a new gem object.
       this.gemsArray[allGems.length] = new Gem(constants.POSITION_X[positionX], constants.POSITION_Y[positionY]);
@@ -566,7 +567,7 @@ export const Game = (function() {
     gems.reset();
 
     // Spawn a random amount of collectable gems
-    gems.spawn(getRandomInt(2,4));
+    gems.spawn(Helpers.getRandomInt(2,4));
 
     // Reset player's position
     player.reset();
@@ -767,16 +768,6 @@ export const Game = (function() {
   	}
 
   });
-
-  /**
-   * getRandomInt
-   * @param  {number} min - minium number to generate
-   * @param  {number} max - maximum number to generate
-   * @return {number} random integer
-   */
-  function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
 
   /**
    * Return public variables/objects
