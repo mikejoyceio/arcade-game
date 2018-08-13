@@ -14,12 +14,12 @@ import Constants from 'Constants';
 import * as Helpers from 'helpers'
 import * as Music from 'music';
 import * as SFX from 'sfx';
-import { Enemy } from 'enemy';
 import { Engine } from 'engine';
 import { Gem } from 'gem';
 import { Player } from 'player';
 import { Resources } from 'resources';
 import { Stats } from 'stats';
+import { Enemies } from 'enemies';
 
 export const Game = (function() {
 
@@ -60,6 +60,8 @@ export const Game = (function() {
 
   		// Fade in the game music
   		Music.track.fade(0.3, 0.7, 2000);
+
+      enemies.spawn(2);
 
   		/* Unpause the game to allow the player to move around
   		 * when arrow keys are pressed
@@ -131,59 +133,6 @@ export const Game = (function() {
   });
 
   /**
-   * @class Enemies - spawns and removes enemies from Engine.canvas
-   * @constructor
-   */
-  const Enemies = function() {
-
-     /**
-      * Enemies generated are pushed into this array
-      * before being pushed into the global allEnemies array
-      */
-  	this.enemiesArray = [];
-
-  };
-
-  /**
-   * spawn - spawn enemies on Engine.canvas
-   * @memberOf Enemies
-   * @param {number} total - total number of enemies to spawn
-   */
-  Enemies.prototype.spawn = function(total) {
-
-  	for (let i = 0; i < total; i++) {
-
-  		// Call the Helpers.getRandomInt function and set the speed of the enemy.
-  		const speed = Helpers.getRandomInt(Constants.MIN_SPEED, Constants.MAX_SPEED);
-
-  		// Call the Helpers.getRandomInt function and set the players y position on the Engine.canvas.
-  		const position = Helpers.getRandomInt(0, 3);
-
-  		// Instatiate a new enemy object.
-  		this.enemiesArray[allEnemies.length] = new Enemy(Constants.POSITION_Y[position], speed);
-
-  		// Push the new enemy into the allEnemies array.
-  		allEnemies.push(this.enemiesArray[allEnemies.length]);
-
-  	}
-
-  };
-
-  /**
-   * reset - clear all enemies from Engine.canvas
-   * @memberOf Enemies
-   */
-  Enemies.prototype.reset = function() {
-    const enemyCount = allEnemies.length;
-    for (let i = 0; i < enemyCount; i++) {
-      allEnemies.splice(i, allEnemies.length);
-    }
-  };
-
-  // Instantiate a new Enemies object
-  const enemies = new Enemies();
-
-  /**
    * @class Gems - spawns and removes gems from Engine.canvas
    * @constructor
    */
@@ -241,7 +190,6 @@ export const Game = (function() {
    */
   const Level = function() {
   	this.level = 1;
-  	enemies.spawn(2);
   	gems.spawn(2);
   };
 
@@ -325,6 +273,9 @@ export const Game = (function() {
 
   // Instantiate new Player object
   const player = new Player();
+
+  // Instantiate a new Enemies object
+  const enemies = new Enemies();
 
   /**
    * Listen for key presses and call the player.handleInput function if the game isn't paused.
