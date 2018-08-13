@@ -99,7 +99,8 @@ module.exports = {
     filename: 'js/app.js',
   },
   resolve: {
-    extensions: ['.js']
+    extensions: ['.js'],
+    modules: [path.resolve(__dirname, 'src/js/modules'), 'node_modules']
   },
   module: {
     rules: [

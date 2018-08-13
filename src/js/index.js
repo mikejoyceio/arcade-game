@@ -11,4 +11,4 @@ import '../scss/game.scss';
 /**
  * Import JS
  */
-import './game.js';
+import 'game';

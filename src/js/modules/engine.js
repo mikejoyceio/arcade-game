@@ -3,8 +3,8 @@
  * @author Mike Joyce [hello@mikejoyce.io]
  */
 
-import { Game } from './game.js';
-import { Resources } from './resources.js';
+import { Game } from 'game.js';
+import { Resources } from 'resources.js';
 
 export const Engine = (function() {
 

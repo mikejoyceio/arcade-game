@@ -10,11 +10,11 @@
  * - Make it tablet & mobile friendly
  */
 
-import * as SFX from './sfx.js';
-import * as Music from './music.js';
-import { Engine } from './engine.js';
-import { Resources } from './resources.js';
-import * as Helpers from './helpers.js'
+import * as SFX from 'sfx';
+import * as Music from 'music';
+import { Engine } from 'engine';
+import { Resources } from 'resources';
+import * as Helpers from 'helpers'
 
 export const Game = (function() {
 
