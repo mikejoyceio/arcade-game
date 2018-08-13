@@ -10,11 +10,13 @@
  * - Make it tablet & mobile friendly
  */
 
-import * as SFX from 'sfx';
+import Constants from 'Constants';
+import * as Helpers from 'helpers'
 import * as Music from 'music';
+import * as SFX from 'sfx';
+import { Enemy } from 'enemy';
 import { Engine } from 'engine';
 import { Resources } from 'resources';
-import * as Helpers from 'helpers'
 
 export const Game = (function() {
 
@@ -35,60 +37,6 @@ export const Game = (function() {
    * game over screens are hidden from view.
    */
   let paused = true;
-
-  /**
-   * Constants
-   * @type {Object}
-   */
-  const constants = {
-
-  	// Default canvas text font family
-  	FONT : '20pt ArcadeClassic',
-
-  	// Default canvas text font color
-  	FONT_COLOR: 'white',
-
-  	// Game element height
-  	ENTITY_HEIGHT : 50,
-
-  	// Game element width
-  	ENTITY_WIDTH : 50,
-
-  	// Enemy minimum speed
-  	MIN_SPEED : 50,
-
-  	// Enemy max speed
-  	MAX_SPEED : 400,
-
-  	// Player's start x-position on the canvas
-  	PLAYER_START_X : 300,
-
-  	// Player's start y-position on the canvas
-  	PLAYER_START_Y : 470,
-
-  	// Player movement distance
-  	PLAYER_MOVEMENT : 50,
-
-  	// X position array for game elements
-  	POSITION_X : [0, 100, 200, 300, 400, 500, 600],
-
-  	// Y position array for game elements
-  	POSITION_Y : [160, 230, 310, 390],
-
-  	// Left canvas boundary
-  	LEFT_BOUNDARY : 0,
-
-  	// Top canvas boundary
-  	TOP_BOUNDARY : 20,
-
-  	// Right canvas boundary
-  	RIGHT_BOUNDARY : 600,
-
-  	// Bottom canvas boundary
-  	BOTTOM_BOUNDARY : 470
-
-  };
-
 
   $(document).ready(function() {
 
@@ -179,68 +127,6 @@ export const Game = (function() {
 
   });
 
-
-  /**
-   * @class Enemy
-   * @constructor
-   * @param {number} positionY
-   * @param {number} speed
-   */
-  const Enemy = function(positionY, speed) {
-
-  	// Set the enemy's image
-    this.sprite = 'dist/images/enemy-bug.png';
-
-    // Set a random x position on the canvas
-    this.x = Helpers.getRandomInt(-1000, -100);
-
-    // Set the y position. Determined by the positionY argument
-    this.y = positionY;
-
-    // Set the enemy's height
-  	this.height = constants.ENTITY_HEIGHT;
-
-  	// Set the enemy's width
-  	this.width = constants.ENTITY_WIDTH;
-
-  	// Set the enemy's speed. Determined by the speed argument
-    this.speed = speed;
-
-  };
-
-  /**
-   * update - update the enemy's position on Engine.canvas
-   * @memberOf Enemy
-   * @param {string} deltaTime
-   */
-  Enemy.prototype.update = function(deltaTime) {
-
-    /**
-     * Multiply the position and speed the enemy object by delta time
-     * to give the illusion of animation.
-     */
-    this.x = this.x + this.speed * deltaTime;
-
-    /**
-     * If the enemy goes off the right most side of the canvas,
-     * reset it's position at a random negative position off
-     * the left side of Engine.canvas.
-    */
-    if (this.x > Engine.canvas.width) {
-      this.x = Helpers.getRandomInt(-2000, -100);
-    }
-
-  };
-
-  /**
-   * render
-   * @memberOf Enemy - Draw an enemy on Engine.canvas
-   */
-  Enemy.prototype.render = function() {
-    Engine.ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-  };
-
-
   /**
    * @class Enemies - spawns and removes enemies from Engine.canvas
    * @constructor
@@ -265,13 +151,13 @@ export const Game = (function() {
   	for (let i = 0; i < total; i++) {
 
   		// Call the Helpers.getRandomInt function and set the speed of the enemy.
-  		const speed = Helpers.getRandomInt(constants.MIN_SPEED, constants.MAX_SPEED);
+  		const speed = Helpers.getRandomInt(Constants.MIN_SPEED, Constants.MAX_SPEED);
 
   		// Call the Helpers.getRandomInt function and set the players y position on the Engine.canvas.
   		const position = Helpers.getRandomInt(0, 3);
 
   		// Instatiate a new enemy object.
-  		this.enemiesArray[allEnemies.length] = new Enemy(constants.POSITION_Y[position], speed);
+  		this.enemiesArray[allEnemies.length] = new Enemy(Constants.POSITION_Y[position], speed);
 
   		// Push the new enemy into the allEnemies array.
   		allEnemies.push(this.enemiesArray[allEnemies.length]);
@@ -308,10 +194,10 @@ export const Game = (function() {
   	this.sprite = 'dist/images/' + gemArray[Helpers.getRandomInt(0,2)];
 
   	// Set the gem's height
-  	this.height = constants.ENTITY_HEIGHT;
+  	this.height = Constants.ENTITY_HEIGHT;
 
   	// Set the gem's width
-  	this.width = constants.ENTITY_WIDTH;
+  	this.width = Constants.ENTITY_WIDTH;
 
   	// Set a the x position of the gem
   	this.x = positionX;
@@ -383,7 +269,7 @@ export const Game = (function() {
       const positionY = Helpers.getRandomInt(0, 3);
 
       // Instatiate a new gem object.
-      this.gemsArray[allGems.length] = new Gem(constants.POSITION_X[positionX], constants.POSITION_Y[positionY]);
+      this.gemsArray[allGems.length] = new Gem(Constants.POSITION_X[positionX], Constants.POSITION_Y[positionY]);
 
       // Push the new gem into the allGems array.
       allGems.push(this.gemsArray[allGems.length]);
@@ -417,16 +303,16 @@ export const Game = (function() {
   	this.sprite = 'dist/images/char-boy.png';
 
   	// Set the player's x position on the canvas
-  	this.x = constants.PLAYER_START_X;
+  	this.x = Constants.PLAYER_START_X;
 
   	// Set the player's y position on the canvas
-  	this.y = constants.PLAYER_START_Y;
+  	this.y = Constants.PLAYER_START_Y;
 
   	// Set the player's height
-  	this.height = constants.ENTITY_HEIGHT;
+  	this.height = Constants.ENTITY_HEIGHT;
 
   	// Set the player's width
-  	this.width = constants.ENTITY_WIDTH;
+  	this.width = Constants.ENTITY_WIDTH;
 
   	/* Set the player's default lives.
   	 * The player starts the game with 3.
@@ -449,8 +335,8 @@ export const Game = (function() {
    * @memberOf Player
    */
   Player.prototype.reset = function() {
-  	this.x = constants.PLAYER_START_X;
-  	this.y = constants.PLAYER_START_Y;
+  	this.x = Constants.PLAYER_START_X;
+  	this.y = Constants.PLAYER_START_Y;
   };
 
   /**
@@ -458,8 +344,8 @@ export const Game = (function() {
    * @memberOf Player
    */
   Player.prototype.hit = function() {
-    this.x = constants.PLAYER_START_X;
-    this.y = constants.PLAYER_START_Y;
+    this.x = Constants.PLAYER_START_X;
+    this.y = Constants.PLAYER_START_Y;
     $("#collision").show().fadeOut();
     SFX.playerHit.play();
   };
@@ -506,32 +392,32 @@ export const Game = (function() {
   	 * player is within the left boundary of the
   	 * canvas, allow the player to go move left.
   	 */
-  	if (key === 'left' && this.x != constants.LEFT_BOUNDARY) {
-  	 this.x = this.xNow + -constants.PLAYER_MOVEMENT;
+  	if (key === 'left' && this.x != Constants.LEFT_BOUNDARY) {
+  	 this.x = this.xNow + -Constants.PLAYER_MOVEMENT;
   	}
 
   	/* If the up arrow key is pressed and the
   	 * player is within the top boundary of the
   	 * canvas, allow the player to move upwards.
   	 */
-  	if (key === 'up' && this.y != constants.TOP_BOUNDARY) {
-  	 this.y = this.yNow + -constants.PLAYER_MOVEMENT;
+  	if (key === 'up' && this.y != Constants.TOP_BOUNDARY) {
+  	 this.y = this.yNow + -Constants.PLAYER_MOVEMENT;
   	}
 
   	/* If the right arrow key is pressed and the
   	 * player is within the right boundary of the
   	 * canvas, allow the player to move right.
   	 */
-  	if (key === 'right' && this.x != constants.RIGHT_BOUNDARY) {
-  	 this.x = this.xNow + constants.PLAYER_MOVEMENT;
+  	if (key === 'right' && this.x != Constants.RIGHT_BOUNDARY) {
+  	 this.x = this.xNow + Constants.PLAYER_MOVEMENT;
   	}
 
   	/* If the down arrow key is pressed and the
   	 * player is within the bottom boundary of the
   	 * canvas, allow the player to move down.
   	 */
-  	if (key === 'down' && this.y != constants.BOTTOM_BOUNDARY) {
-  	 this.y = this.yNow + constants.PLAYER_MOVEMENT;
+  	if (key === 'down' && this.y != Constants.BOTTOM_BOUNDARY) {
+  	 this.y = this.yNow + Constants.PLAYER_MOVEMENT;
   	}
 
   };
@@ -633,8 +519,8 @@ export const Game = (function() {
    * @constructor
    */
   const Stats = function() {
-  	this.font = constants.FONT;
-  	this.fontColor = constants.FONT_COLOR;
+  	this.font = Constants.FONT;
+  	this.fontColor = Constants.FONT_COLOR;
   	this.currentLevel = level.level;
   	this.currentLives = player.lives;
   	this.currentScore = 0;
