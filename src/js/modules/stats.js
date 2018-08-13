@@ -1,3 +1,7 @@
+/**
+ * @file Stats
+ * @author Mike Joyce [hello@mikejoyce.io]
+ */
 
 import Constants from 'Constants';
 import { Engine } from 'engine';
