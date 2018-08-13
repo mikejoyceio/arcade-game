@@ -58,7 +58,10 @@ const Constants = {
     IMAGE_PATH: 'dist/images',
 
     // SFX path
-    SFX_PATH: 'dist/sfx'
+    SFX_PATH: 'dist/sfx',
+
+    // Music path
+    MUSIC_PATH: 'dist/music'
 
 }
 

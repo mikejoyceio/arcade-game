@@ -13,11 +13,6 @@ import Constants from 'Constants';
 
 const path = Constants.SFX_PATH;
 
-export const gameMusic = new Howl({
-	src: [`${path}/music.mp3`],
-	loop: true
-});
-
 export const gameOver = new Howl({
 	src: [`${path}/gong.mp3`]
 });
