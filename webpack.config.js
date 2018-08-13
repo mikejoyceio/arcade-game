@@ -194,7 +194,8 @@ module.exports = {
       'css/app.css'
     ),
     new plugins.copyWebpack([
-      {from: 'src/images', to:'images'}
+      {from: 'src/images', to:'images'},
+      {from: 'src/sfx', to: 'sfx'}
     ]),
     new webpack.ProvidePlugin({
       $: 'jquery',

@@ -55,7 +55,10 @@ const Constants = {
     BOTTOM_BOUNDARY : 470,
 
     // Image path
-    IMAGE_PATH: 'dist/images'
+    IMAGE_PATH: 'dist/images',
+
+    // SFX path
+    SFX_PATH: 'dist/sfx'
 
 }
 
