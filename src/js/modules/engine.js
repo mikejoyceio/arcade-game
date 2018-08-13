@@ -255,10 +255,9 @@ export const Engine = (function() {
 
 				/* If the player has more than one life remaining,
 				 * call the player.updateLives method and remove a life.
-				 * If the player has no more lives remaining, call the
-				 * reset() function.
+				 * If the player has no more lives remaining, reset the game.
 				 */
-				return Game.player.lives > 1 ? Game.player.updateLives('remove', 1) : reset();
+				return Game.player.lives > 1 ? Game.player.updateLives('remove', 1) : Game.level.reset();
 
 			}
 
@@ -282,31 +281,13 @@ export const Engine = (function() {
   	});
 
   	/* Check goal collisions.
-  	 * If the player gets to the other side, call the updateLevel() function.
+  	 * If the player gets to the other side, update the level
   	 */
   	if (Game.player.y == 70) {
 
-				updateLevel();
+				Game.level.update();
 
 		}
-
-  }
-
-  /**
-   * updateLevel
-   */
-  function updateLevel() {
-
-    Game.level.update();
-
-  }
-
-  /**
-   * reset
-   */
-  function reset() {
-
-    Game.level.reset();
 
   }
 
