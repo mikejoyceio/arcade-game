@@ -16,6 +16,9 @@ import { Game } from 'game';
  */
 export const Player = function() {
 
+  // Set a pointer reference to 'this'
+  const self = this;
+
   // Set the player's image
   this.sprite = 'dist/images/char-boy.png';
 
@@ -35,6 +38,25 @@ export const Player = function() {
    * The player starts the game with 3.
    */
   this.lives = 3;
+
+  /**
+   * Listen for key presses and call the player.handleInput function if the game isn't paused.
+   * @param {Object} event
+   */
+  document.addEventListener('keydown', function(event) {
+
+    const allowedKeys = {
+      37: 'left',
+      38: 'up',
+      39: 'right',
+      40: 'down'
+    };
+
+    if (!Game.getState()) {
+      self.handleInput(allowedKeys[event.keyCode]);
+    }
+
+  });
 
 };
 
