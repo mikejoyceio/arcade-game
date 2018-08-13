@@ -68,7 +68,7 @@ export const Game = (function() {
   		/* Unpause the game to allow the player to move around
   		 * when arrow keys are pressed
   		 */
-  		paused = false;
+      setState('unpause');
 
   	});
 
@@ -87,7 +87,7 @@ export const Game = (function() {
   		/* Unpause the game to allow the player to move around
   		 * when arrow keys are pressed
   		 */
-  		paused = false;
+  		setState('unpause');
 
   	});
 
@@ -101,6 +101,11 @@ export const Game = (function() {
   		Music.track.fade(0.7, 0.3, 2000);
   		$('#howTo').fadeIn('fast');
 
+      /* Pause the game to prevent the player from moving around
+       * when arrow keys are pressed
+       */
+      setState('pause');
+
   	});
 
   	// Hide the how to play screen on click
@@ -112,6 +117,11 @@ export const Game = (function() {
   		// Fade in the game music
   		Music.track.fade(0.3, 0.7, 2000);
   		$('#howTo').fadeOut('fast');
+
+      /* Unpause the game to allow the player to move around
+       * when arrow keys are pressed
+       */
+      setState('unpause');
 
   	});
 
@@ -134,6 +144,18 @@ export const Game = (function() {
 
   });
 
+  function setState(state) {
+    if (state === 'pause') {
+      paused = true;
+    } else {
+      paused = false;
+    }
+  }
+
+  function getState() {
+    return paused;
+  }
+
   // Instantiate a new Gems object
   const gems = new Gems();
 
@@ -150,35 +172,18 @@ export const Game = (function() {
   const level = new Level();
 
   /**
-   * Listen for key presses and call the player.handleInput function if the game isn't paused.
-   * @param {Object} event
-   */
-  document.addEventListener('keydown', function(event) {
-
-    const allowedKeys = {
-      37: 'left',
-      38: 'up',
-      39: 'right',
-      40: 'down'
-    };
-
-    if (!paused) {
-    	player.handleInput(allowedKeys[event.keyCode]);
-  	}
-
-  });
-
-  /**
    * Return public variables/objects
    */
   return {
     allEnemies,
-    gems,
     allGems,
-    player,
-    stats,
     enemies,
-    level
+    gems,
+    getState,
+    level,
+    player,
+    setState,
+    stats
   }
 
 })();

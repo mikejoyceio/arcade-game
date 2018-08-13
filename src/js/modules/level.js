@@ -81,7 +81,7 @@ Level.prototype.reset = function() {
   Music.track.fade(1.0, 0.3, 1000);
 
   // Pause the game to prevent player movement
-  //paused = true;
+  Game.setState('pause');
 
   // Show game over screen
   $('#gameOver').show();
