@@ -68,10 +68,15 @@ const plugins = {
   /**
    * Favicons
    * @type {Object}
-   @see {@link https://www.npmjs.com/package/favicons-webpack-plugin}
+   * @see {@link https://www.npmjs.com/package/favicons-webpack-plugin}
    */
   favicons: require('favicons-webpack-plugin'),
 
+  /**
+   * Copy Webpack
+   * @type {Object}
+   * @see {@link https://www.npmjs.com/package/copy-webpack-plugin}
+   */
   copyWebpack: require('copy-webpack-plugin')
 
 };
