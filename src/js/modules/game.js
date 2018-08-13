@@ -15,11 +15,11 @@ import * as Helpers from 'helpers'
 import * as Music from 'music';
 import * as SFX from 'sfx';
 import { Engine } from 'engine';
-import { Gem } from 'gem';
 import { Player } from 'player';
 import { Resources } from 'resources';
 import { Stats } from 'stats';
 import { Enemies } from 'enemies';
+import { Gems } from 'gems';
 
 export const Game = (function() {
 
@@ -62,6 +62,8 @@ export const Game = (function() {
   		Music.track.fade(0.3, 0.7, 2000);
 
       enemies.spawn(2);
+
+      gems.spawn(2);
 
   		/* Unpause the game to allow the player to move around
   		 * when arrow keys are pressed
@@ -132,55 +134,6 @@ export const Game = (function() {
 
   });
 
-  /**
-   * @class Gems - spawns and removes gems from Engine.canvas
-   * @constructor
-   */
-  const Gems = function() {
-
-  	/* Gems generated are pushed into this array
-  	 * before being pushed into the global allGems array
-  	 */
-  	this.gemsArray = [];
-
-  };
-
-  /**
-   * spawn
-   * @memberOf Gems
-   * @param {number} total - total number of gems to spawn
-   */
-  Gems.prototype.spawn = function(total) {
-
-    for (let i = 0; i < total; i++) {
-
-      // Call the Helpers.getRandomInt function and set the gems x position on the Engine.canvas.
-      const positionX = Helpers.getRandomInt(0, 6);
-
-      // Call the Helpers.getRandomInt function and set the gems y position on the Engine.canvas.
-      const positionY = Helpers.getRandomInt(0, 3);
-
-      // Instatiate a new gem object.
-      this.gemsArray[allGems.length] = new Gem(Constants.POSITION_X[positionX], Constants.POSITION_Y[positionY]);
-
-      // Push the new gem into the allGems array.
-      allGems.push(this.gemsArray[allGems.length]);
-
-    }
-
-  };
-
-  /**
-   * reset - clear all gems from Engine.canvas
-   * @memberOf Gems
-   */
-  Gems.prototype.reset = function() {
-    const gemsCount = allGems.length;
-    for (let i = 0; i < gemsCount; i++) {
-      allGems.splice(i, allGems.length);
-    }
-  };
-
   // Instantiate a new Gems object
   const gems = new Gems();
 
@@ -190,7 +143,6 @@ export const Game = (function() {
    */
   const Level = function() {
   	this.level = 1;
-  	gems.spawn(2);
   };
 
   /**
