@@ -10,7 +10,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
   @include text-transform(uppercase);
   @include font-weight(extra-bold);
-  @include font-family(secondary);
+  @include font-family(primary);
+  color: color(neutral-light);
 }
 
 @mixin text($type) {

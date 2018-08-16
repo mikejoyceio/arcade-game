@@ -2,20 +2,13 @@
 // Canvas
 
 canvas {
-  width: 90%;
   height: 90%;
   transition: all 1s linear;
-}
+  width: 90%;
 
-@media only screen and (min-width: 800px) {
-  canvas {
-    margin-top: 10px;
+  @include breakpoint(800px) {
     height: 707px;
+    margin-top: 10px;
     width: 707px;
   }
-}
-
-.image-responsive {
-  display: block;
-  width: 100%;
 }
