@@ -6895,7 +6895,8 @@ h5,
 h6 {
   text-transform: uppercase !important;
   font-weight: 900;
-  font-family: sans-serif;
+  font-family: 'ArcadeClassic', sans-serif;
+  color: #FFFFFF;
 }
 
 p {
@@ -6918,43 +6919,39 @@ button {
   margin-bottom: 0;
 }
 
-/* Button */
-
-.button {
-  border-radius: 3px;
-  display: inline-block;
-  padding: 6px 40px;
-  margin: 65px;
+.button.primary,
+button.primary {
   background: #68d44f;
-  font-family: ArcadeClassic;
+  border-radius: 3px;
   color: #fff;
+  display: inline-block;
   font-size: 29px;
   letter-spacing: 1px;
+  margin: 65px;
+  padding: 6px 40px;
   text-shadow: 1px 1px 1px green;
 }
 
-.button:hover {
+.button.primary:hover,
+.button.primary:focus,
+button.primary:hover,
+button.primary:focus {
   opacity: 0.95;
 }
 
 canvas {
-  width: 90%;
   height: 90%;
   -webkit-transition: all 1s linear;
   transition: all 1s linear;
+  width: 90%;
 }
 
-@media only screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
   canvas {
-    margin-top: 10px;
     height: 707px;
+    margin-top: 10px;
     width: 707px;
   }
-}
-
-.image-responsive {
-  display: block;
-  width: 100%;
 }
 
 a:hover,
@@ -6964,131 +6961,139 @@ a:focus {
 
 .toggle-music {
   color: #fff;
-  position: absolute;
-  top: 10px;
-  right: -200px;
-  font-family: ArcadeClassic;
   font-size: 17px;
+  position: absolute;
+  right: -200px;
+  top: 10px;
 }
 
-.toggle-music.off {
+.toggle-music.on span:first-of-type {
+  display: inline;
+}
+
+.toggle-music.on span:last-of-type {
   display: none;
 }
 
+.toggle-music span:first-of-type {
+  display: none;
+}
+
+.toggle-music span:last-of-type {
+  display: inline;
+}
+
 footer {
-  padding: 0;
-  width: 100%;
-  margin: auto;
-  position: absolute;
-  text-align: center;
+  bottom: 50px;
   left: 0;
+  margin: auto;
+  padding: 0;
+  position: absolute;
   right: 0;
-  z-index: 99999;
-  top: 695px;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
 }
 
 footer .how-to-link {
   color: #fff;
-  font-family: ArcadeClassic;
   font-size: 20px;
   word-spacing: 5px;
 }
 
 header {
-  position: absolute;
-  width: 300px;
-  top: 15px;
   left: 0;
-  right: 0;
   margin: auto;
-}
-
-.heading {
-  color: #fff;
-  font-family: ArcadeClassic;
+  position: absolute;
+  right: 0;
+  top: 15px;
+  width: 300px;
 }
 
 .overlay {
   background: #202020;
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
   z-index: 99999;
 }
 
-.overlay > .content {
+.overlay .content {
   margin: auto;
 }
 
-.hidden {
-  display: none;
-}
-
-.collision {
-  background: red;
-  opacity: 0.2;
-}
-
-.start-screen > .content {
+.overlay.start .content {
   max-width: 600px;
   padding: 15% 10%;
 }
 
-.start-screen .grass {
-  background: url(../images/grass-block.png);
-  height: 172px;
-  width: 100%;
+.overlay.start .grass {
   background-repeat: repeat-x;
-  position: absolute;
+  background: url(../images/grass-block.png);
   bottom: 0;
+  height: 172px;
   left: 0;
+  position: absolute;
+  width: 100%;
 }
 
-.how-to > .content {
+.overlay.instructions {
+  display: none;
+}
+
+.overlay.instructions .content {
   max-width: 600px;
   padding: 5% 10%;
 }
 
-.how-to .heading {
+.overlay.instructions .heading {
   font-size: 60px;
 }
 
-.how-to p {
+.overlay.instructions p {
   color: #fff;
   font-size: 20px;
   letter-spacing: 1px;
-  font-family: ArcadeClassic;
 }
 
-.game-over > .content {
-  max-width: 800px;
+.overlay.game-over {
+  display: none;
+}
+
+.overlay.game-over .content {
   margin-bottom: 0;
+  max-width: 800px;
   padding: 12% 10%;
 }
 
-.game-over .heading {
+.overlay.game-over .heading {
   font-size: 100px;
   margin-bottom: 0;
 }
 
-.game-over .final-score {
+.overlay.game-over .final-score {
   color: #fff;
-  font-family: ArcadeClassic;
   font-size: 20px;
 }
 
-.game-over .final-score span {
+.overlay.game-over .final-score span {
   margin-left: 5px;
   font-size: 24px;
 }
 
-.game-over img {
-  position: absolute;
-  top: 140px;
-  right: 0;
+.overlay.game-over img {
   left: 0;
   margin: auto;
+  position: absolute;
+  right: 0;
+  top: 140px;
+}
+
+.overlay.collision {
+  background: red;
+  display: none;
+  opacity: 0.2;
 }
 
