@@ -198,11 +198,6 @@ module.exports = {
       {from: 'src/music', to: 'music'},
       {from: 'src/sfx', to: 'sfx'}
     ]),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    }),
     new plugins.imageMin({
       test: 'images/**'
     })

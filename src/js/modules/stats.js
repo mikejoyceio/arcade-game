@@ -121,7 +121,7 @@ Stats.prototype.updateGems = function() {
  * @return {[type]} [description]
  */
 Stats.prototype.reset = function() {
-  $('#finalScore').html(this.currentScore);
+  document.getElementById('finalScore').textContent = this.currentScore;
   this.currentScore = 0;
   this.currentGems = 0;
   this.currentLevel = 1;

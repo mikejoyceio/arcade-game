@@ -27,10 +27,11 @@ export const Game = (function() {
   /**
    * DOM Elements
    */
+  const $buttonHowToClose = document.getElementById('howToClose');
+  const $buttonHowToOpen = document.getElementById('howToOpen');
   const $buttonPlay = document.getElementById('playGame');
   const $buttonPlayAgain = document.getElementById('playAgain');
-  const $buttonHowToOpen = document.getElementById('howToOpen');
-  const $buttonHowToClose = document.getElementById('howToClose');
+  const $buttonToggleMusic = document.getElementById('toggleMusic');
 
   /**
    * Instantiate objects
@@ -146,11 +147,11 @@ export const Game = (function() {
 
 	});
 
-  $('.toggle-music').on('click', function() {
+  $buttonToggleMusic.addEventListener('click', (event) => {
 
-    $(this).toggleClass('on');
+    event.target.classList.toggle('on');
 
-		if ($(this).hasClass('on')) {
+    if (event.target.classList.contains('on')) {
 			Music.track.play();
 		} else {
       Music.track.pause();
