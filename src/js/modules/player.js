@@ -4,10 +4,11 @@
  */
 
 import Constants from 'Constants';
-import * as SFX from 'sfx';
 import { Engine } from 'engine';
-import { Resources } from 'resources';
 import { Game } from 'game';
+import { Resources } from 'resources';
+import * as Overlays from 'overlays';
+import * as SFX from 'sfx';
 
 /**
  * @class Player - responsible for rendering the player, updating the
@@ -85,7 +86,8 @@ Player.prototype.reset = function() {
 Player.prototype.hit = function() {
   this.x = Constants.PLAYER_START_X;
   this.y = Constants.PLAYER_START_Y;
-  $("#collision").show().fadeOut();
+  Overlays.collision.show();
+  Overlays.collision.fadeOut();
   SFX.playerHit.play();
 };
 

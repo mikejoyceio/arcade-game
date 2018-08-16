@@ -5,8 +5,9 @@
 
 import { Game } from 'game';
 import * as Helpers from 'helpers';
-import * as SFX from 'sfx';
 import * as Music from 'music';
+import * as Overlays from 'overlays';
+import * as SFX from 'sfx';
 
 /**
  * @class Level - responsible for keeping track of and reseting the level
@@ -84,6 +85,6 @@ Level.prototype.reset = function() {
   Game.setState('pause');
 
   // Show game over screen
-  $('#gameOver').show();
+  Overlays.gameOver.show();
 
 };

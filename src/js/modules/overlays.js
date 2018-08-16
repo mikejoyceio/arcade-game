@@ -5,8 +5,10 @@
 
 import { Overlay } from 'overlay';
 
-export const intro = new Overlay('startScreen');
+export const start = new Overlay('overlayStart');
 
-export const gameOver = new Overlay('gameOver');
+export const gameOver = new Overlay('overlayGameOver');
 
-export const howTo = new Overlay('howTo');
+export const instructions = new Overlay('overlayInstructions');
+
+export const collision = new Overlay('overlayCollision');

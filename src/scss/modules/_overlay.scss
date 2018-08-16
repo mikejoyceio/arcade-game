@@ -9,19 +9,84 @@
   width: 100%;
   height: 100%;
   z-index: 99999;
-}
 
-.overlay > .content {
-  margin: auto;
-}
+  .content {
+    margin: auto;
+  }
 
-.hidden {
-  display: none;
-}
+  &.start {
 
-// Collision Overlay
+    .content {
+      max-width: 600px;
+      padding: 15% 10%;
+    }
 
-.collision {
-  background: red;
-  opacity: 0.2;
+    .grass {
+      background-repeat: repeat-x;
+      background: url(../images/grass-block.png);
+      bottom: 0;
+      height: 172px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  &.instructions {
+    display: none;
+
+    .content {
+      max-width: 600px;
+      padding: 5% 10%;
+    }
+
+    .heading {
+      font-size: 60px;
+    }
+
+    p {
+      color: #fff;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+  }
+
+  &.game-over {
+    display: none;
+
+    .content {
+      margin-bottom: 0;
+      max-width: 800px;
+      padding: 12% 10%;
+    }
+
+    .heading {
+      font-size: 100px;
+      margin-bottom: 0;
+    }
+
+    .final-score {
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .final-score span {
+      margin-left: 5px;
+      font-size: 24px;
+    }
+
+    img {
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 140px;
+    }
+  }
+
+  &.collision {
+    display: none;
+    background: red;
+    opacity: 0.2;
+  }
 }

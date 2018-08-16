@@ -64,7 +64,7 @@ export const Game = (function() {
   $buttonPlay.addEventListener('click', (event) => {
 
     // Fade intro overlay in
-    Overlays.intro.fadeOut();
+    Overlays.start.fadeOut();
 
 		// Play the select sound effect
 		SFX.gameSelect.play();
@@ -114,7 +114,7 @@ export const Game = (function() {
 
   $buttonHowToOpen.addEventListener('click', (event) => {
 
-    Overlays.howTo.fadeIn();
+    Overlays.instructions.fadeIn();
 
 		// Play the select sound effect
 		SFX.gameSelect.play();
@@ -131,7 +131,7 @@ export const Game = (function() {
 
   $buttonHowToClose.addEventListener('click', (event) => {
 
-    Overlays.howTo.fadeOut();
+    Overlays.instructions.fadeOut();
 
 		// Play the select sound effect
 		SFX.gameSelect.play();
