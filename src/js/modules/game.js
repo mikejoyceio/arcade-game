@@ -15,7 +15,7 @@ import { Engine } from 'engine';
 import { Player } from 'player';
 import { Stats } from 'stats';
 import { Enemies } from 'enemies';
-import { Gems } from 'gems';
+import { Collectables } from 'collectables';
 import { Level } from 'level';
 import * as Helpers from 'helpers'
 import * as Music from 'music';
@@ -63,7 +63,7 @@ export const Game = (function() {
 
       enemies.spawn(2);
 
-      gems.spawn(2);
+      collectables.spawn(2);
 
   		/* Unpause the game to allow the player to move around
   		 * when arrow keys are pressed
@@ -156,8 +156,8 @@ export const Game = (function() {
     return paused;
   }
 
-  // Instantiate a new Gems object
-  const gems = new Gems();
+  // Instantiate a new Collectables object
+  const collectables = new Collectables();
 
   // Instatiate a new Stats object
   const stats = new Stats();
@@ -178,7 +178,7 @@ export const Game = (function() {
     allEnemies,
     allGems,
     enemies,
-    gems,
+    collectables,
     getState,
     level,
     player,

@@ -1,5 +1,5 @@
 /**
- * @file Gem
+ * @file Collectable
  * @author Mike Joyce [hello@mikejoyce.io]
  */
 
@@ -10,11 +10,11 @@ import { Engine } from 'engine';
 import { Resources } from 'resources';
 
 /**
- * @class Gem - generates, clears and resets a collectable gem
+ * @class Collectable - generates, clears and resets a collectable gem
  * @param {number} positionX - x position of the gem
  * @param {number} positionY - y position of the gem
  */
-export const Gem = function(positionX, positionY) {
+export const Collectable = function(positionX, positionY) {
 
   // Include the blue, green and orange gem images in an array
   const gemArray = ['gem-blue.png', 'gem-green.png', 'gem-orange.png'];
@@ -41,7 +41,7 @@ export const Gem = function(positionX, positionY) {
  * positions generated from the POSITION_X and POSITION_y constant arrays.
  * @memberOf Gem
  */
-Gem.prototype.render = function() {
+Collectable.prototype.render = function() {
   Engine.ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
@@ -49,7 +49,7 @@ Gem.prototype.render = function() {
  * clear - hide the gem by setting it's x position to a negative value on Engine.canvas
  * @memberOf Gem
  */
-Gem.prototype.clear = function() {
+Collectable.prototype.clear = function() {
 
   this.x = -100;
 
@@ -62,6 +62,6 @@ Gem.prototype.clear = function() {
  * reset - instantiates a new Gem, which in turn resets it's color and position on Engine.canvas
  * @memberOf Gem
  */
-Gem.prototype.reset = function() {
-  gem = new Gem();
+Collectable.prototype.reset = function() {
+  collectable = new Collectable();
 };

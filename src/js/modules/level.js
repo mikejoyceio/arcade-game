@@ -31,10 +31,10 @@ Level.prototype.update = function() {
   }
 
   // Reset gems
-  Game.gems.reset();
+  Game.collectables.reset();
 
   // Spawn a random amount of collectable gems
-  Game.gems.spawn(Helpers.getRandomInt(2,4));
+  Game.collectables.spawn(Helpers.getRandomInt(2,4));
 
   // Reset player's position
   Game.player.reset();
