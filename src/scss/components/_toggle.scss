@@ -8,7 +8,22 @@
   right: -200px;
   top: 10px;
 
-  &.off {
+  &.on {
+
+    span:first-of-type {
+      display: inline;
+    }
+
+    span:last-of-type {
+      display: none;
+    }
+  }
+
+  span:first-of-type {
     display: none;
+  }
+
+  span:last-of-type {
+    display: inline;
   }
 }

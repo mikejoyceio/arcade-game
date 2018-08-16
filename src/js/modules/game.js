@@ -148,17 +148,13 @@ export const Game = (function() {
 
   $('.toggle-music').on('click', function() {
 
-		if ($(this).hasClass('on')) {
-			Music.track.pause();
-			$(this).hide();
-			$('.toggle-music.off').show();
-		}
+    $(this).toggleClass('on');
 
-		if ($(this).hasClass('off')) {
+		if ($(this).hasClass('on')) {
 			Music.track.play();
-			$(this).hide();
-			$('.toggle-music.on').show();
-		}
+		} else {
+      Music.track.pause();
+    }
 
 	});
 
